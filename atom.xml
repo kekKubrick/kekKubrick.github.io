@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kekkubrick.github.io/"/>
-  <updated>2020-04-09T10:35:46.806Z</updated>
+  <updated>2020-04-09T11:12:59.609Z</updated>
   <id>https://kekkubrick.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://kekkubrick.github.io/2020/04/09/dian-ying-zha-ji/"/>
     <id>https://kekkubrick.github.io/2020/04/09/dian-ying-zha-ji/</id>
     <published>2020-04-09T01:25:00.000Z</published>
-    <updated>2020-04-09T10:35:46.806Z</updated>
+    <updated>2020-04-09T11:12:59.609Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,8 @@
       
         
         
-          &lt;h2 id=&quot;我的电影喜好&quot;&gt;&lt;a href=&quot;#我的电影喜好&quot; class=&quot;headerlink&quot; title=&quot;我的电影喜好&quot;&gt;&lt;/a&gt;我的电影喜好&lt;/h2&gt;&lt;p&gt;   镜头语言冷酷客观&lt;br&gt;   温柔&lt;br&gt;   色彩浓烈&lt;/p&gt;
-&lt;h2
+          &lt;h2 id=&quot;我喜爱的电影导演&quot;&gt;&lt;a href=&quot;#我喜爱的电影导演&quot; class=&quot;headerlink&quot; title=&quot;我喜爱的电影导演&quot;&gt;&lt;/a&gt;我喜爱的电影导演&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Stanley
         
       
     
@@ -41,31 +41,6 @@
     
     
       <category term="电影札记" scheme="https://kekkubrick.github.io/tags/%E7%94%B5%E5%BD%B1%E6%9C%AD%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://kekkubrick.github.io/2020/04/08/hello-world/"/>
-    <id>https://kekkubrick.github.io/2020/04/08/hello-world/</id>
-    <published>2020-04-08T08:35:25.773Z</published>
-    <updated>2020-04-09T04:28:38.216Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="hello world" scheme="https://kekkubrick.github.io/tags/hello-world/"/>
     
   </entry>
   
