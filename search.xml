@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>2020电影札记</title>
+      <link href="/2020/04/09/dian-ying-zha-ji/"/>
+      <url>/2020/04/09/dian-ying-zha-ji/</url>
+      
+        <content type="html"><![CDATA[<p>###我的电影喜好</p><p>   镜头语言冷酷客观<br>   温柔<br>   色彩浓烈</p><p>###我喜爱的电影导演</p><ul><li>Stanley Kubrick</li><li>徐克</li><li>王家卫</li><li>娄烨</li><li>Christopher Nolan</li><li>忻钰坤</li></ul><p>###我喜爱的电影</p><ul><li>美丽人生</li><li>巴里·林登</li><li>东邪西毒 </li><li>末代皇帝</li><li>2001太空漫游 </li><li>万物理论</li><li>敦刻尔克</li><li>奇爱博士</li><li>颐和园</li><li>思悼</li><li>杀人回忆</li><li>坠入 </li><li>全金属外壳</li><li>大话西游之月光宝盒</li><li>大话西游之大圣娶亲</li><li>梁祝</li></ul><p>###我喜爱的导演混剪/影片分析/采访</p><p><a href="https://www.bilibili.com/video/BV147411r7DA" target="_blank" rel="noopener">库布里克&amp;塔科夫斯基镜头对比</a></p><p><a href="https://www.xinpianchang.com/a52439?from=search_post" target="_blank" rel="noopener">娄烨导演电影混剪</a></p><p><a href="https://www.bilibili.com/video/BV1ps411P7h2" target="_blank" rel="noopener">徐克专访</a></p><p><a href="https://www.bilibili.com/video/BV1ub411a7ai" target="_blank" rel="noopener">盖里奇电影混剪</a></p><p><a href="https://www.bilibili.com/video/BV1uJ41157wV" target="_blank" rel="noopener">《敦刻尔克》结构性剪辑</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电影札记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电影札记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2020/04/08/hello-world/"/>
       <url>/2020/04/08/hello-world/</url>
@@ -11,6 +36,12 @@
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> hello world </tag>
+            
+        </tags>
       
     </entry>
     

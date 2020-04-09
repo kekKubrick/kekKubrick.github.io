@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kekkubrick.github.io/"/>
-  <updated>2020-04-08T08:35:25.774Z</updated>
+  <updated>2020-04-09T05:31:50.667Z</updated>
   <id>https://kekkubrick.github.io/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2020电影札记</title>
+    <link href="https://kekkubrick.github.io/2020/04/09/dian-ying-zha-ji/"/>
+    <id>https://kekkubrick.github.io/2020/04/09/dian-ying-zha-ji/</id>
+    <published>2020-04-09T01:25:00.000Z</published>
+    <updated>2020-04-09T05:31:50.667Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;###我的电影喜好&lt;/p&gt;
+&lt;p&gt;   镜头语言冷酷客观&lt;br&gt;   温柔&lt;br&gt;   色彩浓烈&lt;/p&gt;
+&lt;p&gt;###我喜爱的电影导演&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stanley
+        
+      
+    
+    </summary>
+    
+    
+      <category term="电影札记" scheme="https://kekkubrick.github.io/categories/%E7%94%B5%E5%BD%B1%E6%9C%AD%E8%AE%B0/"/>
+    
+    
+      <category term="电影札记" scheme="https://kekkubrick.github.io/tags/%E7%94%B5%E5%BD%B1%E6%9C%AD%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://kekkubrick.github.io/2020/04/08/hello-world/"/>
     <id>https://kekkubrick.github.io/2020/04/08/hello-world/</id>
     <published>2020-04-08T08:35:25.773Z</published>
-    <updated>2020-04-08T08:35:25.774Z</updated>
+    <updated>2020-04-09T04:28:38.216Z</updated>
     
     <summary type="html">
     
@@ -36,6 +67,8 @@
     </summary>
     
     
+    
+      <category term="hello world" scheme="https://kekkubrick.github.io/tags/hello-world/"/>
     
   </entry>
   
