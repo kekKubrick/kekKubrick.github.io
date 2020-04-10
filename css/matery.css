@@ -1188,6 +1188,7 @@ article .article-tags .chip {
     max-width: 100%;
     height: auto;
     cursor: pointer;
+    box-shadow: none;
 }
 
 #articleContent video {
