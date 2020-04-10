@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="B树、B+树、B*树, kek">
-    <meta name="description" content="B树、B+树、B*树常用知识">
+    <meta name="keywords" content="训练笔记——搜索算法, kek">
+    <meta name="description" content="基本搜索算法、搜索算法优化、题目">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>B树、B+树、B*树 | kek</title>
+    <title>训练笔记——搜索算法 | kek</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,7 +246,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">B树、B+树、B*树</h1>
+                    <h1 class="description center-align post-title">训练笔记——搜索算法</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                <span class="chip bg-color">数据结构</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/acm/">
+                                <span class="chip bg-color">acm</span>
                             </a>
                         
                     </div>
@@ -376,8 +380,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                数据结构
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -389,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-09
+                    2019-07-09
                 </div>
                 
 
@@ -403,14 +407,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    4 分
                 </div>
                 
 				
@@ -426,63 +430,94 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="B树、B-树、B-树"><a href="#B树、B-树、B-树" class="headerlink" title="B树、B+树、B*树"></a>B树、B+树、B*树</h1><hr>
-<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><ul>
-<li>B树：二叉树 ，有序数组+平衡多叉树；  </li>
-<li>B-树：是一种多路搜索树   </li>
-<li>B+树：B+树是B-树的变体，也是一种多路搜索树。非叶子结点的子树指针与关键字个数相同，有序数组链表+平衡多叉树；  </li>
-<li>B*树：一棵丰满的B+树。是B+树的变体，在B+树的非根和非叶子结点再增加指向兄弟的指针。</li>
-</ul>
-<hr>
-<ol>
-<li><ul>
-<li>B+树<strong>方便扫库</strong>  </li>
-<li>B树必须用<strong>中序遍历</strong>的方法按序扫库<br>B+树直接从叶子结点挨个扫一遍就完了  </li>
+                <h2 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h2><h3 id="基本搜索算法"><a href="#基本搜索算法" class="headerlink" title="基本搜索算法"></a>基本搜索算法</h3><ol>
+<li>枚举算法  <ul>
+<li>列举问题的所有状态从而寻找符合问题的解的方法。  </li>
+<li>适合用于<strong>状态较少，比较简单</strong>的问题上。  </li>
 </ul>
 </li>
-<li><ul>
-<li>B+树支持 <strong>range-query（范围查询）</strong>非常方便，而B树不支持。这是数据库选用B+树的最主要原因。<br>比如要查 5-10之间的，B+树一把到5这个标记，再一把到10，然后串起来就行了，B树就非常麻烦。  </li>
-<li>B树的好处，就是<strong>成功查询</strong>特别有利，因为树的高度总体要比B+树矮。不成功的情况下，B树也比B+树稍稍占一点点便宜。<br>B树比如你的例子中查，17，一把就得到结果了，<br>有很多基于频率的搜索是选用B树，越频繁query的结点越往根上走，前提是需要对query做统计，而且要对key做一些变化。</li>
+<li>广度优先搜索（BFS）  六度  <ul>
+<li>从初始点开始，根据规则展开第一层节点，并检查目标节点是否在这些节点上，若没有，再将所有的第一层的节点逐一展开，得到第二层节点，如没有，则扩展下去，直到发现目标节点为止。   </li>
+<li>比较适合求<strong>最少步骤或最短解序列</strong>的题目。   </li>
+<li><strong>一般设置一个队列queue</strong>，将起始节点放入队列中，然后从队列头取出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点放到队尾，然后再从队列头取出一个节点，直至找到目标节点。  </li>
+</ul>
+</li>
+<li>深度优先搜索（DFS）  <ul>
+<li><strong>一般设置一个栈stack</strong>，将起始节点放入栈中，然后从栈中弹出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点入栈，然后再从栈顶弹出一个节点，直到找到目标节点。   </li>
+<li><strong>深度优先搜索得到的第一个解，不一定是最优解</strong>。  </li>
+</ul>
+</li>
+<li>A*算法  <ul>
+<li>利用问题的规则和特点来制定一些启发规则，由此来改变节点的扩展顺序，将最有希望扩展出最优解的节点优先扩展，使得尽快找到最优解。  </li>
+<li>对每一个节点，有一个估价函数F来估算起始节点经过该节点到达目标节点的最佳路径的代价。  </li>
+<li><strong>每个节点扩展的时候，总是选择具有最小的F的节点</strong>。  </li>
+<li><strong>F=G+B×H</strong>：G为从起始节点到当前节点的实际代价，已经算出，H为从该节点到目标节点的最优路径的估计代价。F要单调递增。  </li>
+<li>B最好随着搜索深度成反比变化，在搜索深度浅的地方，主要让搜索依靠启发信息，尽快的逼近目标，而当搜索深的时候，逐渐变成广度优先搜索。  </li>
+</ul>
+</li>
+<li>回溯算法  <ul>
+<li>回溯算法是一种系统的搜索问题的解题方法。它的基本思想是：从一条路前行，能进则进，不能进则退回来，换一条路再试。回溯法是一种通用的解题方法  </li>
+<li>和深度优先相似，不同之处在于<strong>对一个节点扩展的时候，并不将所有的子节点扩展出来</strong>，而只扩展其中的一个。因而<strong>具有盲目性，但内存占用少</strong>。 </li>
 </ul>
 </li>
 </ol>
 <hr>
-<ul>
-<li>B树比连续内存空间的二分查找的优点是，改变B树结构(插入与删除结点）不需要移动大段的内存数据，甚至通常是常数开销</li>
-<li>B+-tree比B 树更适合实际应用中操作系统的文件索引和数据库索引B+-tree的查询效率更加稳定</li>
-<li>B*树分配新结点的概率比B+树要低，空间使用率更高</li>
+<h3 id="搜索算法优化"><a href="#搜索算法优化" class="headerlink" title="搜索算法优化"></a>搜索算法优化</h3><ul>
+<li>在搜索前，根据条件降低搜索规模。   </li>
+<li>广度优先搜索中，<strong>被处理过的节点，充分释放空间</strong>。    </li>
+<li>根据问题的约束条件进行<strong>剪枝</strong>。   </li>
+<li>利用搜索过程中的中间解，避免重复计算。      </li>
+</ul>
+<ol>
+<li><strong>剪枝</strong>函数<br>对于回溯算法，需要搜索整棵解空间树，剪枝顾名思义，就是通过某种判断，避免一些不必要的遍历过程，剪去解空间树中的一些不必要的枝条，从而缩小整个搜索的规模。  </li>
+<li><strong>双向广度搜索</strong><br>所谓双向广度搜索，故名思议指的是搜索沿正向（从初始结点向目标结点方向搜索）和逆向（从目标结点向初始结点方向搜索）两个方向同时进行，当两个方向上的搜索生成同一子结点时完成搜索过程。  <ul>
+<li>从起始节点向目标节点方向搜索，同时从目标节点向起始节点方向搜索。  </li>
+<li>双向搜索<strong>只能用于广度优先搜索</strong>中。    </li>
+<li>双向搜索扩展的<strong>节点数量要比单向少的多</strong>。  </li>
+<li>运用双向广度搜索理想上可以<strong>减少二分之一的搜索量，从而提高搜索效率</strong>。  </li>
+<li>双向广度搜索一般有两种方法：<ul>
+<li>一种是两个方向交替扩展，</li>
+<li>另一种是选择结点个数比较少的方向先扩展。<ul>
+<li>显然第一种方法比第二种方法容易实现，但是由于<strong>第二种方法克服了双向搜索中结点生成速度不平衡的状态，效率将比第一种方法高</strong>。  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><ul>
+<li>数的划分<ul>
+<li>对n=m+（n-m），分解时用深搜</li>
+<li>对数m与n-m用回溯递归法搜索。</li>
+</ul>
+</li>
+<li>闪避湖泊<ul>
+<li>深搜</li>
+</ul>
+</li>
+<li>信道分配  <ul>
+<li>构造无向图</li>
+<li>深搜</li>
+</ul>
+</li>
+<li>骑士移动<ul>
+<li>深搜广搜都可，但深搜速度慢量大，广搜效率更高。 </li>
+</ul>
+</li>
+<li>图像周长<ul>
+<li>深搜</li>
+</ul>
+</li>
+</ul>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><ul>
+<li><a href="http://poj.org/problem?id=1915" target="_blank" rel="noopener">移动的骑士</a></li>
+<li><a href="http://poj.org/problem?id=1426" target="_blank" rel="noopener">寻找M</a></li>
+<li><a href="http://poj.org/problem?id=1979" target="_blank" rel="noopener">红与黑</a></li>
+<li><a href="http://poj.org/problem?id=1011" target="_blank" rel="noopener">小木棒</a></li>
 </ul>
 <hr>
-<p>B树<br><img src="/2020/04/09/b-shu-b-shu-b-cheng-shu/1.jpg" alt="B树">      </p>
-<p>B+树<br><img src="/2020/04/09/b-shu-b-shu-b-cheng-shu/2.jpg" alt="B+树">   </p>
-<p>B*树     </p>
-<p><img src="/2020/04/09/b-shu-b-shu-b-cheng-shu/3.jpg" alt="B*树"></p>
-<hr>
-<h2 id="具体"><a href="#具体" class="headerlink" title="具体"></a>具体</h2><h3 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h3><p>B 树又叫平衡多路查找树。一棵m阶的B 树 (注：切勿简单的认为一棵m阶的B树是m叉树，虽然存在四叉树，八叉树，KD树，及vp/R树/R*树/R+树/X树/M树/线段树/希尔伯特R树/优先R树等空间划分树，但与B树完全不等同)的特性如下：</p>
-<ol>
-<li><strong>树中每个结点最多含有m个孩子（m&gt;=2）</strong>；  </li>
-<li>除根结点和叶子结点外，其它每个结点至少有[ceil(m / 2)]个孩子（其中ceil(x)是一个取上限的函数）；  </li>
-<li>若根结点不是叶子结点，则至少有2个孩子（特殊情况：没有孩子的根结点，即根结点为叶子结点，整棵树只有一个根节点）；  </li>
-<li>所有叶子结点都出现在同一层，叶子结点不包含任何关键字信息(可以看做是外部接点或查询失败的接点，实际上这些结点不存在，指向这些结点的指针都为null)；（读者反馈@冷岳：这里有错，叶子节点只是没有孩子和指向孩子的指针，这些节点也存在，也有元素。@研究者July：其实，关键是把什么当做叶子结点，因为如红黑树中，每一个NULL指针即当做叶子结点，只是没画出来而已）。  </li>
-<li>每个非终端结点中包含有n个关键字信息： (n，P0，K1，P1，K2，P2，……，Kn，Pn)。其中：<br>a)   Ki (i=1…n)为关键字，且关键字按顺序升序排序K(i-1)&lt; Ki。<br>b)   Pi为指向子树根的接点，且指针P(i-1)指向子树种所有结点的关键字均小于Ki，但都大于K(i-1)。<br>c)   关键字的个数n必须满足： [ceil(m / 2)-1]&lt;= n &lt;= m-1。</li>
-</ol>
-<p><strong>B树的高度</strong><br><strong>(┌M/2┐是向上取整,即取与结果最接近的比结果大的整数,┌3/2┐=2； └M/2┘是向下取整,即取与结果最接近的比结果小的整数,└3/2┘=1.)</strong>  </p>
-<ol>
-<li>因为根至少有两个孩子，因此第2层至少有两个结点。  </li>
-<li>除根和叶子外，其它结点至少有┌m/2┐个孩子，  </li>
-<li>因此在第3层至少有2*┌m/2┐个结点，  </li>
-<li>在第4层至少有2*(┌m/2┐^2)个结点，  </li>
-<li>在第 I 层至少有2<em>(┌m/2┐^(l-2) )个结点，于是有： N+1 ≥ 2</em>┌m/2┐I-2；  </li>
-<li>考虑第L层的结点个数为N+1，那么2*(┌m/2┐^(l-2)）≤N+1，也就是L层的最少结点数刚好达到N+1个，即： I≤ log┌m/2┐((N+1)/2 )+2；<br>所以   </li>
-</ol>
-<p><strong>当B树包含N个关键字时，B树的最大高度为l-1（因为计算B树高度时，叶结点所在层不计算在内），即：l - 1 = log┌m/2┐((N+1)/2 )+1.</strong><br>这个B树的高度公式从侧面显示了B树的查找效率是相当高的。<br><strong>一棵含有N个总关键字数的m阶的B树的最大高度是多少?<br>答：log_ceil（m/2）(N+1)/2 + 1 （上面中关于m阶B树的第1点特性已经提到：树中每个结点含有最多含有m个孩子，即m满足：ceil(m/2)&lt;=m&lt;=m。而树中每个结点含孩子数越少，树的高度则越大，故如此）。</strong></p>
-<hr>
-<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p>B+tree：是应文件系统所需而产生的一种<strong>Btree的变形树</strong>。<br>一棵m阶的B+树和m阶的B树的异同点在于：<br>1.<strong>有n棵子树的结点中含有n-1 个关键字</strong>； (此处颇有争议，B+树到底是与B 树n棵子树有n-1个关键字 保持一致，还是不一致： <strong>B树n棵子树的结点中含有n个关键字</strong>，待后续查证。<br>2.<strong>所有的叶子结点中包含了全部关键字的信息</strong>，及指向含有这些关键字记录的指针，且叶子结点本身依关键字的大小自小而大的顺序链接。 <strong>(而B 树的叶子节点并没有包括全部需要查找的信息)</strong><br>3.所有的非终端结点可以看成是索引部分，结点中仅含有其子树根结点中最大（或最小）关键字。 (而B 树的非终节点也包含需要查找的有效信息)</p>
-<hr>
-<h3 id="B-树-1"><a href="#B-树-1" class="headerlink" title="B*树"></a>B*树</h3><p>B* -tree是<strong>B+-tree的变体</strong>，在B+树的基础上(所有的叶子结点中包含了全部关键字的信息，及指向含有这些关键字记录的指针)，B* 树中<strong>非根和非叶子结点再增加指向兄弟的指针</strong>；B* 树定义了非叶子结点关键字个数至少为(2/3)* M，即<strong>块的最低使用率为2/3（代替B+树的1/2）</strong>。  </p>
-<p>B+树的分裂：当一个结点满时，分配一个新的结点，并将原结点中1/2的数据复制到新结点，最后在父结点中增加新结点的指针；B+树的分裂只影响原结点和父结点，而不会影响兄弟结点，所以它不需要指向兄弟的指针。<br>B* 树的分裂：当一个结点满时，如果它的下一个兄弟结点未满，那么将一部分数据移到兄弟结点中，再在原结点插入关键字，最后修改父结点中兄弟结点的关键字（因为兄弟结点的关键字范围改变了）；如果兄弟也满了，则在原结点与兄弟结点之间增加新结点，并各复制1/3的数据到新结点，最后在父结点增加新结点的指针。<br>所以，B*树分配新结点的概率比B+树要低，空间使用率更高；</p>
-<hr>
-<p>内容参考/更多B-tree插入删除操作见<br><a href="https://blog.csdn.net/u013400245/article/details/52824744" target="_blank" rel="noopener">B树B+树的原理和操作</a></p>
 
             </div>
             <hr/>
@@ -508,7 +543,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kekkubrick.github.io/2020/04/09/b-shu-b-shu-b-cheng-shu/">https://kekkubrick.github.io/2020/04/09/b-shu-b-shu-b-cheng-shu/</a>
+                    <a href="https://kekkubrick.github.io/2019/07/09/sou-suo-suan-fa/">https://kekkubrick.github.io/2019/07/09/sou-suo-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +581,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                                    <span class="chip bg-color">数据结构</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/acm/">
+                                    <span class="chip bg-color">acm</span>
                                 </a>
                             
                         </div>
@@ -717,58 +756,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/09/chang-yong-han-shu-yu-zhu-yi-shi-xiang/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="常用函数与注意事项">
-                        
-                        <span class="card-title">常用函数与注意事项</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            C++常用函数
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/acm/">
-                        <span class="chip bg-color">acm</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/04/09/dian-ying-zha-ji/">
                     <div class="card-image">
                         
@@ -784,9 +771,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -804,6 +791,59 @@
                     
                     <a href="/tags/%E7%94%B5%E5%BD%B1%E6%9C%AD%E8%AE%B0/">
                         <span class="chip bg-color">电影札记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/07/09/sou-suo-suan-fa/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="训练笔记——搜索算法">
+                        
+                        <span class="card-title">训练笔记——搜索算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            基本搜索算法、搜索算法优化、题目
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/acm/">
+                        <span class="chip bg-color">acm</span>
                     </a>
                     
                 </div>
