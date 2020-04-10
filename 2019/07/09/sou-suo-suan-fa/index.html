@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="训练笔记——搜索算法, kek">
+    <meta name="keywords" content="笔记——搜索算法, kek">
     <meta name="description" content="基本搜索算法、搜索算法优化、题目">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>训练笔记——搜索算法 | kek</title>
+    <title>笔记——搜索算法 | kek</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -246,7 +246,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">训练笔记——搜索算法</h1>
+                    <h1 class="description center-align post-title">笔记——搜索算法</h1>
                 </div>
             </div>
         </div>
@@ -437,28 +437,36 @@
 </blockquote>
 <ul>
 <li>列举问题的所有状态从而寻找符合问题的解的方法。  </li>
-<li>适合用于<strong>状态较少，比较简单</strong>的问题上。  <ol start="2">
+<li>适合用于<strong>状态较少，比较简单</strong>的问题上。  <blockquote>
+<ol start="2">
 <li>广度优先搜索（BFS）  六度  </li>
 </ol>
+</blockquote>
 </li>
 <li>从初始点开始，根据规则展开第一层节点，并检查目标节点是否在这些节点上，若没有，再将所有的第一层的节点逐一展开，得到第二层节点，如没有，则扩展下去，直到发现目标节点为止。   </li>
 <li>比较适合求<strong>最少步骤或最短解序列</strong>的题目。   </li>
-<li><strong>一般设置一个队列queue</strong>，将起始节点放入队列中，然后从队列头取出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点放到队尾，然后再从队列头取出一个节点，直至找到目标节点。  <ol start="3">
+<li><strong>一般设置一个队列queue</strong>，将起始节点放入队列中，然后从队列头取出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点放到队尾，然后再从队列头取出一个节点，直至找到目标节点。  <blockquote>
+<ol start="3">
 <li>深度优先搜索（DFS）  </li>
 </ol>
+</blockquote>
 </li>
 <li><strong>一般设置一个栈stack</strong>，将起始节点放入栈中，然后从栈中弹出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点入栈，然后再从栈顶弹出一个节点，直到找到目标节点。   </li>
-<li><strong>深度优先搜索得到的第一个解，不一定是最优解</strong>。  <ol start="4">
+<li><strong>深度优先搜索得到的第一个解，不一定是最优解</strong>。  <blockquote>
+<ol start="4">
 <li>A*算法  </li>
 </ol>
+</blockquote>
 </li>
 <li>利用问题的规则和特点来制定一些启发规则，由此来改变节点的扩展顺序，将最有希望扩展出最优解的节点优先扩展，使得尽快找到最优解。  </li>
 <li>对每一个节点，有一个估价函数F来估算起始节点经过该节点到达目标节点的最佳路径的代价。  </li>
 <li><strong>每个节点扩展的时候，总是选择具有最小的F的节点</strong>。  </li>
 <li><strong>F=G+B×H</strong>：G为从起始节点到当前节点的实际代价，已经算出，H为从该节点到目标节点的最优路径的估计代价。F要单调递增。  </li>
-<li>B最好随着搜索深度成反比变化，在搜索深度浅的地方，主要让搜索依靠启发信息，尽快的逼近目标，而当搜索深的时候，逐渐变成广度优先搜索。  <ol start="5">
+<li>B最好随着搜索深度成反比变化，在搜索深度浅的地方，主要让搜索依靠启发信息，尽快的逼近目标，而当搜索深的时候，逐渐变成广度优先搜索。  <blockquote>
+<ol start="5">
 <li>回溯算法  </li>
 </ol>
+</blockquote>
 </li>
 <li>回溯算法是一种系统的搜索问题的解题方法。它的基本思想是：从一条路前行，能进则进，不能进则退回来，换一条路再试。回溯法是一种通用的解题方法  </li>
 <li>和深度优先相似，不同之处在于<strong>对一个节点扩展的时候，并不将所有的子节点扩展出来</strong>，而只扩展其中的一个。因而<strong>具有盲目性，但内存占用少</strong>。 </li>
@@ -466,14 +474,14 @@
 <hr>
 <h3 id="搜索算法优化"><a href="#搜索算法优化" class="headerlink" title="搜索算法优化"></a>搜索算法优化</h3><blockquote>
 <ul>
-<li>在搜索前，根据条件降低搜索规模。   </li>
-</ul>
-</blockquote>
-<ul>
+<li>在搜索前，根据条件降低搜索规模。   <ul>
 <li>广度优先搜索中，<strong>被处理过的节点，充分释放空间</strong>。    </li>
 <li>根据问题的约束条件进行<strong>剪枝</strong>。   </li>
 <li>利用搜索过程中的中间解，避免重复计算。      </li>
 </ul>
+</li>
+</ul>
+</blockquote>
 <blockquote>
 <ol>
 <li><strong>剪枝</strong>函数<br>对于回溯算法，需要搜索整棵解空间树，剪枝顾名思义，就是通过某种判断，避免一些不必要的遍历过程，剪去解空间树中的一些不必要的枝条，从而缩小整个搜索的规模。  <ol start="2">
