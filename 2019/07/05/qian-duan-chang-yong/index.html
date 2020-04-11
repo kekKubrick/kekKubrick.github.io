@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="笔记——搜索算法, keke">
-    <meta name="description" content="基本搜索算法、搜索算法优化、题目">
+    <meta name="keywords" content="前端常用, keke">
+    <meta name="description" content="前端常用网站、素材、logo、icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>笔记——搜索算法 | keke</title>
+    <title>前端常用 | keke</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -202,7 +202,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">笔记——搜索算法</h1>
+                    <h1 class="description center-align post-title">前端常用</h1>
                 </div>
             </div>
         </div>
@@ -320,12 +320,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/acm/">
-                                <span class="chip bg-color">acm</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
                     </div>
@@ -336,8 +332,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -349,7 +345,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-09
+                    2019-07-05
                 </div>
                 
 
@@ -363,14 +359,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    337
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 				
@@ -386,104 +382,80 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h2><h3 id="基本搜索算法"><a href="#基本搜索算法" class="headerlink" title="基本搜索算法"></a>基本搜索算法</h3><blockquote>
-<ol>
-<li>枚举算法  <ul>
-<li>列举问题的所有状态从而寻找符合问题的解的方法。  </li>
-<li>适合用于<strong>状态较少，比较简单</strong>的问题上。  </li>
-</ul>
+                <h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><ul>
+<li><p><a href="http://www.h-ui.net/site.shtml" target="_blank" rel="noopener">前端网址导航 - H-ui前端框架官方网站</a></p>
 </li>
-<li>广度优先搜索（BFS）  六度  <ul>
-<li>从初始点开始，根据规则展开第一层节点，并检查目标节点是否在这些节点上，若没有，再将所有的第一层的节点逐一展开，得到第二层节点，如没有，则扩展下去，直到发现目标节点为止。   </li>
-<li>比较适合求<strong>最少步骤或最短解序列</strong>的题目。   </li>
-<li><strong>一般设置一个队列queue</strong>，将起始节点放入队列中，然后从队列头取出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点放到队尾，然后再从队列头取出一个节点，直至找到目标节点。  </li>
-</ul>
+<li><p><a href="https://www.bootcss.com/" target="_blank" rel="noopener">Bootstrap中文网</a></p>
 </li>
-<li>深度优先搜索（DFS）  <ul>
-<li><strong>一般设置一个栈stack</strong>，将起始节点放入栈中，然后从栈中弹出一个节点，检查是否是目标节点，如不是则进行扩展，将扩展出的所有节点入栈，然后再从栈顶弹出一个节点，直到找到目标节点。   </li>
-<li><strong>深度优先搜索得到的第一个解，不一定是最优解</strong>。  </li>
-</ul>
+<li><p><a href="https://www.w3school.com.cn/index.html" target="_blank" rel="noopener">w3school</a></p>
 </li>
-<li>A*算法  <ul>
-<li>利用问题的规则和特点来制定一些启发规则，由此来改变节点的扩展顺序，将最有希望扩展出最优解的节点优先扩展，使得尽快找到最优解。  </li>
-<li>对每一个节点，有一个估价函数F来估算起始节点经过该节点到达目标节点的最佳路径的代价。  </li>
-<li><strong>每个节点扩展的时候，总是选择具有最小的F的节点</strong>。  </li>
-<li><strong>F=G+B×H</strong>：G为从起始节点到当前节点的实际代价，已经算出，H为从该节点到目标节点的最优路径的估计代价。F要单调递增。  </li>
-<li>B最好随着搜索深度成反比变化，在搜索深度浅的地方，主要让搜索依靠启发信息，尽快的逼近目标，而当搜索深的时候，逐渐变成广度优先搜索。  </li>
-</ul>
+<li><p><a href="https://www.youzhan.org/page/2/" target="_blank" rel="noopener">Bootstrap 网页精选</a></p>
 </li>
-<li>回溯算法  <ul>
-<li>回溯算法是一种系统的搜索问题的解题方法。它的基本思想是：从一条路前行，能进则进，不能进则退回来，换一条路再试。回溯法是一种通用的解题方法  </li>
-<li>和深度优先相似，不同之处在于<strong>对一个节点扩展的时候，并不将所有的子节点扩展出来</strong>，而只扩展其中的一个。因而<strong>具有盲目性，但内存占用少</strong>。 </li>
-</ul>
+<li><p><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">阿里巴巴矢量图标库</a></p>
 </li>
-</ol>
-</blockquote>
-<hr>
-<h3 id="搜索算法优化"><a href="#搜索算法优化" class="headerlink" title="搜索算法优化"></a>搜索算法优化</h3><blockquote>
-<ul>
-<li>在搜索前，根据条件降低搜索规模。   <ul>
-<li>广度优先搜索中，<strong>被处理过的节点，充分释放空间</strong>。    </li>
-<li>根据问题的约束条件进行<strong>剪枝</strong>。   </li>
-<li>利用搜索过程中的中间解，避免重复计算。      </li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ol>
-<li><strong>剪枝</strong>函数<br>对于回溯算法，需要搜索整棵解空间树，剪枝顾名思义，就是通过某种判断，避免一些不必要的遍历过程，剪去解空间树中的一些不必要的枝条，从而缩小整个搜索的规模。  <ol start="2">
-<li><strong>双向广度搜索</strong><br>所谓双向广度搜索，故名思议指的是搜索沿正向（从初始结点向目标结点方向搜索）和逆向（从目标结点向初始结点方向搜索）两个方向同时进行，当两个方向上的搜索生成同一子结点时完成搜索过程。  <ul>
-<li>从起始节点向目标节点方向搜索，同时从目标节点向起始节点方向搜索。  </li>
-<li>双向搜索<strong>只能用于广度优先搜索</strong>中。    </li>
-<li>双向搜索扩展的<strong>节点数量要比单向少的多</strong>。  </li>
-<li>运用双向广度搜索理想上可以<strong>减少二分之一的搜索量，从而提高搜索效率</strong>。  </li>
-<li>双向广度搜索一般有两种方法：<ul>
-<li>一种是两个方向交替扩展，</li>
-<li>另一种是选择结点个数比较少的方向先扩展。<ul>
-<li>显然第一种方法比第二种方法容易实现，但是由于<strong>第二种方法克服了双向搜索中结点生成速度不平衡的状态，效率将比第一种方法高</strong>。  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</blockquote>
-<hr>
-<h3 id="题"><a href="#题" class="headerlink" title="题"></a>题</h3><ul>
-<li>数的划分<ul>
-<li>对n=m+（n-m），分解时用深搜</li>
-<li>对数m与n-m用回溯递归法搜索。</li>
-</ul>
-</li>
-<li>闪避湖泊<ul>
-<li>深搜</li>
-</ul>
-</li>
-<li>信道分配  <ul>
-<li>构造无向图</li>
-<li>深搜</li>
-</ul>
-</li>
-<li>骑士移动<ul>
-<li>深搜广搜都可，但深搜速度慢量大，广搜效率更高。 </li>
-</ul>
-</li>
-<li>图像周长<ul>
-<li>深搜</li>
-</ul>
-</li>
-</ul>
-<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><ul>
-<li><a href="http://poj.org/problem?id=1915" target="_blank" rel="noopener">移动的骑士</a></li>
-<li><a href="http://poj.org/problem?id=1426" target="_blank" rel="noopener">寻找M</a></li>
-<li><a href="http://poj.org/problem?id=1979" target="_blank" rel="noopener">红与黑</a></li>
-<li><a href="http://poj.org/problem?id=1011" target="_blank" rel="noopener">小木棒</a></li>
 </ul>
 <hr>
+<h2 id="素材"><a href="#素材" class="headerlink" title="素材"></a>素材</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li><a href="http://bg-patterns.com/?paged=36" target="_blank" rel="noopener">Bg-patterns 背景パターン配布＆作成サイト </a> </li>
+</ul>
+<h3 id="插画"><a href="#插画" class="headerlink" title="插画"></a>插画</h3><ul>
+<li><a href="https://iradesign.io/gallery/illustrations" target="_blank" rel="noopener">IRA Design</a> </li>
+<li><a href="https://undraw.co/illustrations" target="_blank" rel="noopener">Undraw</a></li>
+<li><a href="https://www.glazestock.com/" target="_blank" rel="noopener">Glaze</a></li>
+<li><a href="https://airtable.com/" target="_blank" rel="noopener">Airtable</a> (插画插件)</li>
+</ul>
+<hr>
+<h2 id="logo制作"><a href="#logo制作" class="headerlink" title="logo制作"></a>logo制作</h2><ul>
+<li><a href="https://www.canva.com/" target="_blank" rel="noopener">canva</a> （常用、中文、免费）</li>
+<li><a href="https://www.graphicsprings.com/zh" target="_blank" rel="noopener">graphicsprings</a>（免费、每日更新）</li>
+<li><a href="https://www.ucraft.com/free-logo-maker" target="_blank" rel="noopener">ucraft</a> （免费、高分辨率）</li>
+<li><a href="https://hatchful.shopify.com/" target="_blank" rel="noopener">hatchful</a></li>
+<li><a href="https://www.designhill.com/tools/logo-maker" target="_blank" rel="noopener">designhill</a>（免费）</li>
+<li><a href="https://www.tailorbrands.com/" target="_blank" rel="noopener">tailorbrands</a> （快速设计）</li>
+<li><a href="https://www.logogarden.com/" target="_blank" rel="noopener">logogarden</a>（快速设计）</li>
+<li><a href="https://www.logogenie.net/" target="_blank" rel="noopener">logogenie</a> （免费、快速设计）</li>
+</ul>
+<hr>
+<h2 id="icon"><a href="#icon" class="headerlink" title="icon"></a>icon</h2><ul>
+<li><a href="https://www.iconfont.cn/collections/detail?cid=16265" target="_blank" rel="noopener">黄色小图标1</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16257" target="_blank" rel="noopener">黄色小图标2</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16317" target="_blank" rel="noopener">黄色小图标3</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16393" target="_blank" rel="noopener">蓝色小图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16539" target="_blank" rel="noopener">蓝色小图标·CRM_icon</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16649" target="_blank" rel="noopener">蓝色小图标·企业组织专用图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?cid=16150" target="_blank" rel="noopener">紫色小图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16505" target="_blank" rel="noopener">紫色小图标·娱乐类线性图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16717" target="_blank" rel="noopener">灰色小图标1</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16740" target="_blank" rel="noopener">灰色小图标2</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16749" target="_blank" rel="noopener">灰色小图标·音乐</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16754" target="_blank" rel="noopener">灰色小图标·吃货大收集</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16814" target="_blank" rel="noopener">灰色小图标·天气</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16880" target="_blank" rel="noopener">灰色小图标·供应链平台</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?cid=15672" target="_blank" rel="noopener">彩色通讯线性图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?cid=16240" target="_blank" rel="noopener">彩色工作图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?cid=16147" target="_blank" rel="noopener">彩色智能科技图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?cid=16458" target="_blank" rel="noopener">彩色商业金融类扁平图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16468" target="_blank" rel="noopener">彩色金融营销图标</a></li>
+<li><a href="https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=16470" target="_blank" rel="noopener">彩色卡通警示类图标</a></li>
+</ul>
+<hr>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
+<li><p><a href="http://www.divcss5.com/rumen/r403.shtml" target="_blank" rel="noopener">CSS position绝对定位absolute relative</a></p>
+</li>
+<li><p><a href="https://www.html5tricks.com/css3-hyperlink-animation.html" target="_blank" rel="noopener">CSS3自定义样式超链接按钮 鼠标滑过带动画特效</a>  </p>
+</li>
+<li><p><a href="https://www.html5tricks.com/css3-3d-svg-button.html" target="_blank" rel="noopener">3D质感CSS3按钮 按钮内容支持SVG</a></p>
+</li>
+<li><p><a href="https://www.html5tricks.com/pure-css3-switch-radio.html" target="_blank" rel="noopener">纯CSS3开关样式的自定义单选框</a>  </p>
+</li>
+</ul>
+<hr>
+<h2 id="设计风格"><a href="#设计风格" class="headerlink" title="设计风格"></a>设计风格</h2><ul>
+<li><p><a href="https://www.atlassian.com/time-wasting-at-work-infographic" target="_blank" rel="noopener">You Waste A Lot Of Time At Work</a></p>
+</li>
+<li><p><a href="http://www.qinxue.com/284.html?sysref=2d5" target="_blank" rel="noopener">2.5D插画入门与进阶教程</a></p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -509,7 +481,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kekkubrick.github.io/2019/07/09/sou-suo-suan-fa/">https://kekkubrick.github.io/2019/07/09/sou-suo-suan-fa/</a>
+                    <a href="https://kekkubrick.github.io/2019/07/05/qian-duan-chang-yong/">https://kekkubrick.github.io/2019/07/05/qian-duan-chang-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,12 +519,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/acm/">
-                                    <span class="chip bg-color">acm</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
                         </div>
@@ -723,7 +691,7 @@
         repo: 'kekKubrick.github.io',
         owner: 'kekKubrick',
         admin: ["kekKubrick"],
-        id: '2019-07-09T09-25-00',
+        id: '2019-07-05T09-25-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -748,30 +716,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/09/dian-ying-zha-ji/">
+                <a href="/2019/07/09/sou-suo-suan-fa/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="2020电影札记">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="笔记——搜索算法">
                         
-                        <span class="card-title">2020电影札记</span>
+                        <span class="card-title">笔记——搜索算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            喜爱的电影导演、喜爱的电影、导演混剪/影片分析/采访推荐
+                            基本搜索算法、搜索算法优化、题目
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-07-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E5%BD%B1%E6%9C%AD%E8%AE%B0/" class="post-category">
-                                    电影札记
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -781,8 +749,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%B5%E5%BD%B1%E6%9C%AD%E8%AE%B0/">
-                        <span class="chip bg-color">电影札记</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/acm/">
+                        <span class="chip bg-color">acm</span>
                     </a>
                     
                 </div>
@@ -796,18 +768,18 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/05/qian-duan-chang-yong/">
+                <a href="/2019/07/05/chang-yong-han-shu-yu-zhu-yi-shi-xiang/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="前端常用">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="C++常用">
                         
-                        <span class="card-title">前端常用</span>
+                        <span class="card-title">C++常用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端常用网站、素材、logo、icon
+                            C++常用头文件、常用函数、常用缩写、注意事项
                         
                     </div>
                     <div class="publish-info">
@@ -818,8 +790,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -829,8 +801,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/acm/">
+                        <span class="chip bg-color">acm</span>
                     </a>
                     
                 </div>
