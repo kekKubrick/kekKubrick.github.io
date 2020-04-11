@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>03 重复的数字</title>
+      <link href="/2020/04/05/chong-fu-de-shu-zi/"/>
+      <url>/2020/04/05/chong-fu-de-shu-zi/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="03-重复的数字"><a href="#03-重复的数字" class="headerlink" title="03 重复的数字"></a>03 重复的数字</h2><blockquote><p>难度：简单</p></blockquote><blockquote><p>找出数组中重复的数字。</p></blockquote><blockquote><p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p></blockquote><blockquote><p>示例 1：</p></blockquote><blockquote><p>输入：[2, 3, 1, 0, 2, 5, 3]<br>输出：2 或 3 </p></blockquote><blockquote><p>限制：</p></blockquote><blockquote><p>2 &lt;= n &lt;= 100000</p></blockquote><p>思路：排序、比较、防止数组越界</p><p>代码：</p><pre><code>class Solution {         public:int findRepeatNumber(vector&lt;int&gt;&amp; nums) {       if(nums.size()&lt;=0) return -1;      sort(nums.begin(),nums.end()); //排序   for(int i = 1; i &lt; nums.size(); i++){       if((i+1)&lt;nums.size()){//防越界      if(nums[i-1]==nums[i]&amp;&amp;nums[i]!=nums[i+1]){//比较           return nums[i];      }          }     }    return nums[nums.size()-1];}};</code></pre><p><a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof" target="_blank" rel="noopener">来源：LeetCode</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>笔记——搜索算法</title>
       <link href="/2019/07/09/sou-suo-suan-fa/"/>
       <url>/2019/07/09/sou-suo-suan-fa/</url>
