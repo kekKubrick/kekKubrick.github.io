@@ -440,41 +440,41 @@ using namespace std;
 
 #include &lt;algorithm&gt; //sort()</code></pre><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
 <li><p>多组输入输出  </p>
-<pre><code>while(~scanf(&quot;%d&quot;,&amp;n)){}</code></pre></li>
+<pre><code> while(~scanf(&quot;%d&quot;,&amp;n)){}</code></pre></li>
 <li><p>数组所有数置零  </p>
-<pre><code>memset(cnt,0,sizeof(cnt));  </code></pre></li>
+<pre><code> memset(cnt,0,sizeof(cnt));  </code></pre></li>
 <li><p>去多余字符  </p>
-<pre><code>getchar();  </code></pre></li>
+<pre><code> getchar();  </code></pre></li>
 <li><p>字符处理函数  </p>
-<pre><code>在ctype.h头文件中
-int isdigit(int c) //判断c是否是数字字符，是则返回1，否则返回0，下同。
-int isalpha(int c) //判断c是否是一个字母
-int isalnum(int c) //判断c是否是一个数字或字母
-int islower(int c) //判断c是否是一个小写字母
-int isupper(int c) //判断c是否是一个大写字母
-int toupper(int c) //如果c是一个小写字母，则返回其大写字母
-int tolower(int c) //如果c是一个大写字母，则返回其小写字母</code></pre></li>
+<pre><code> 在ctype.h头文件中
+ int isdigit(int c) //判断c是否是数字字符，是则返回1，否则返回0，下同。
+ int isalpha(int c) //判断c是否是一个字母
+ int isalnum(int c) //判断c是否是一个数字或字母
+ int islower(int c) //判断c是否是一个小写字母
+ int isupper(int c) //判断c是否是一个大写字母
+ int toupper(int c) //如果c是一个小写字母，则返回其大写字母
+ int tolower(int c) //如果c是一个大写字母，则返回其小写字母</code></pre></li>
 <li><p>字符串和内存操作函数  </p>
-<pre><code>char * strcpy(char * s1, char * s2) //将字符串s1内容拷贝到s2
-char * strncpy(char * s1, char * s2,int n) //将字符串s1拷贝到s1,但最多拷贝n个字节。若拷贝字节数达到n，就不会往s1中写入结尾的&apos;\0&apos;
-char * strcat(char * s1, char * s2) //将s2添加到s1末尾
+<pre><code> char * strcpy(char * s1, char * s2) //将字符串s1内容拷贝到s2
+ char * strncpy(char * s1, char * s2,int n) //将字符串s1拷贝到s1,但最多拷贝n个字节。若拷贝字节数达到n，就不会往s1中写入结尾的&#39;\0&#39;
+ char * strcat(char * s1, char * s2) //将s2添加到s1末尾
 
-int strcmp(char * s1, char * s2) //比较两字符串，大小写相关。返回值&lt;0，则s1按字典顺序在s2前。返回值=0，字符串一样。返回值&gt;0，s1在s2后。
-int stricmp(char * s1, char * s2) //比较两字符串，大小写无关。返回值&lt;0，则s1按字典顺序在s2前。返回值=0，字符串一样。返回值&gt;0，s1在s2后。  
-int strlen(const char *string) //计算字符串长度
+ int strcmp(char * s1, char * s2) //比较两字符串，大小写相关。返回值&lt;0，则s1按字典顺序在s2前。返回值=0，字符串一样。返回值&gt;0，s1在s2后。
+ int stricmp(char * s1, char * s2) //比较两字符串，大小写无关。返回值&lt;0，则s1按字典顺序在s2前。返回值=0，字符串一样。返回值&gt;0，s1在s2后。  
+ int strlen(const char *string) //计算字符串长度
 
-char *strncat(char *strDestination, const char *strSource, size_t count) //将字符串前count个字符添加到字符串strDestination末尾
+ char *strncat(char *strDestination, const char *strSource, size_t count) //将字符串前count个字符添加到字符串strDestination末尾
 
-int strncmp(const char *string1, const char *string2, size_t count) //分别取两个字符串的前count个字符作为子字符串，比较大小。
+ int strncmp(const char *string1, const char *string2, size_t count) //分别取两个字符串的前count个字符作为子字符串，比较大小。
 
-char *strrev(char *string) //将字符串string前后颠倒
+ char *strrev(char *string) //将字符串string前后颠倒
 
-void *memcpy(void * s1,void *s2 ,int n) //将s2处的n字节拷贝到s1
-void *memset(void *s,int c,int n) //将s开始的n个字节全部置c  </code></pre></li>
+ void *memcpy(void * s1,void *s2 ,int n) //将s2处的n字节拷贝到s1
+ void *memset(void *s,int c,int n) //将s开始的n个字节全部置c  </code></pre></li>
 <li><p>字符串与数相互转换的函数（定义在stdlib.h中）  </p>
-<pre><code>int atoi(char *s) //字符串s内容转为整型数返回，s=&quot;1234&quot;,返回1234
-double atof(char *s) //字符串s转为浮点数
-char *itoa(int value,char *string ,int radix) //整数value以radix进制表写入string</code></pre></li>
+<pre><code> int atoi(char *s) //字符串s内容转为整型数返回，s=&quot;1234&quot;,返回1234
+ double atof(char *s) //字符串s转为浮点数
+ char *itoa(int value,char *string ,int radix) //整数value以radix进制表写入string</code></pre></li>
 </ul>
 <ul>
 <li><p><a href="https://blog.csdn.net/vir_lee/article/details/80560236" target="_blank" rel="noopener">C++学习之sort（），partial_sort()和partial_sort_copy()的使用与注意事项</a></p>
@@ -673,8 +673,8 @@ char *itoa(int value,char *string ,int radix) //整数value以radix进制表写�
 <li><p>用空指针尽可能的使用nullptr。<br><a href="https://blog.csdn.net/znzxc/article/details/80354434" target="_blank" rel="noopener">NULL与nullptr</a></p>
 </li>
 <li><p>太大的数定义在main外</p>
-<pre><code>#define N 10010
-int cnt[N];</code></pre></li>
+<pre><code> #define N 10010
+ int cnt[N];</code></pre></li>
 <li><p>高精度计算  </p>
 <ul>
 <li>有符号整数（int）能表示的范围是-263－263– 1，即-9223372036854775808~ 9223372036854775807。</li>
