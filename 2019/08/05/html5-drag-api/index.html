@@ -508,7 +508,7 @@ $(&#39;.drop-area&#39;).on(&#39;drop&#39;,function(e){
 <li>all：允许任意dropEffect。</li>
 </ul>
 <p>必须在ondraggstart事件处理程序中设置effectAllowed属性。</p>
-<p>假设你想允许用户把文本框中的文本拖放到一个<div>元素中。首先，必须将dropEffect和effectAllowed设置为”move”。但是，由于<div>元素的放置事件的默认行为是什么也不做，所以文本不可能自动移动。重写这个默认行为，就能从文本框中移走文本。然后你就可以自己编写代码将文本插入到<div>中，这样整个拖放操作就完成了。如果将dropEffect和effectAllowed的值设置为”copy”，那就不会自动移走文本框中的文本。<br>其它属性</div></div></div></p>
+<p>假设你想允许用户把文本框中的文本拖放到一个div元素中。首先，必须将dropEffect和effectAllowed设置为”move”。但是，由于div元素的放置事件的默认行为是什么也不做，所以文本不可能自动移动。重写这个默认行为，就能从文本框中移走文本。然后你就可以自己编写代码将文本插入到div中，这样整个拖放操作就完成了。如果将dropEffect和effectAllowed的值设置为”copy”，那就不会自动移走文本框中的文本。<br>其它属性</p>
 <ul>
 <li>addElement：事件主体是被拖放元素，为拖动操作添加一个元素。添加这个元素只影响数据（即增加作为拖动源而影响回调的对象），不会影响拖动操作时页面元素的外观。在写作文本时，只有Firefox 3.5+实现了这个方法。</li>
 <li>clearData：事件主体是目标元素，清除以特定格式保存的数据。实现这个方法的浏览器有IE、Firefox 3.5、Chrome和Safari 4+。</li>
