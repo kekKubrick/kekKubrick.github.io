@@ -501,35 +501,33 @@
 <h5 id="webstorage读写数据时使用的基本方法"><a href="#webstorage读写数据时使用的基本方法" class="headerlink" title="webstorage读写数据时使用的基本方法"></a>webstorage读写数据时使用的基本方法</h5><ol>
 <li><p>sessionStorage</p>
 <ul>
-<li>保存数据的方法：  </li>
-</ul>
-</li>
-</ol>
-<pre class=" language-c"><code class="language-c">sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">,</span><span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li><p>保存数据的方法：  </p>
+<pre class=" language-javascript"><code class="language-javascript">sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">,</span><span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//或者写成</span>
 sessionStorage<span class="token punctuation">.</span>key<span class="token operator">=</span><span class="token string">"value"</span><span class="token punctuation">;</span></code></pre>
-<ul>
-<li>读取数据的方法：</li>
-</ul>
-<pre class=" language-c"><code class="language-c">变量<span class="token operator">=</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</li>
+<li><p>读取数据的方法：</p>
+<pre class=" language-javascript"><code class="language-javascript">变量<span class="token operator">=</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//或者写成</span>
 变量<span class="token operator">=</span>sessionStorage<span class="token punctuation">.</span>key<span class="token punctuation">;</span></code></pre>
-<ol start="2">
-<li><p>localStorage</p>
-<ul>
-<li>保存数据的方法：</li>
+</li>
 </ul>
 </li>
-</ol>
-<pre class=" language-c"><code class="language-c">localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">,</span><span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li><p>localStorage</p>
+<ul>
+<li><p>保存数据的方法：</p>
+<pre class=" language-javascript"><code class="language-javascript">localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">,</span><span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//或者写成</span>
 localStorage<span class="token punctuation">.</span>key<span class="token operator">=</span><span class="token string">"value"</span><span class="token punctuation">;</span></code></pre>
-<ul>
-<li>读取数据的方法：<pre class=" language-c"><code class="language-c">变量<span class="token operator">=</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</li>
+<li><p>读取数据的方法：</p>
+<pre class=" language-javascript"><code class="language-javascript">变量<span class="token operator">=</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//或者写成</span>
 变量<span class="token operator">=</span>localStorage<span class="token punctuation">.</span>key<span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
+</li>
+</ol>
 <p>在保存数据时，若使用<strong>sessionStorage</strong>读取或保存数据，则使用<strong>sessionStorage对象</strong> 并调用该对象的读写方法；若使用<strong>localStorage</strong>读取或保存数据，则使用<strong>localStorage</strong>对象并调用该对象的读写方法。    </p>
 <p>在进行读写时，不管是哪个对象，都可以通过该对象的<strong>getItem方法来读取数据</strong>，也可以该对象的<strong>自定义属性值读取数据</strong>；可以通过该对象的<strong>setItem方法保存数据</strong>，也可以通过该对象的<strong>自定义属性值保存数据</strong>。  </p>
 <p>保存数据时<strong>按“键名/键值”的形式</strong>进行保存。  </p>
