@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    311
+                    417
                 </div>
                 
 
@@ -420,6 +420,19 @@
 <li><p>500 internal sever error，表示服务器端在<strong>执行</strong>请求时发生了<strong>错误</strong></p>
 </li>
 <li><p>503 service unavailable，表明服务器暂时处于<strong>超负载或正在停机维护</strong>，<strong>无法处理请求</strong></p>
+</li>
+</ul>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>400状态码：请求无效   </p>
+<ul>
+<li>产生原因：   <ul>
+<li>前端提交数据的字段名称和字段类型与后台的实体没有保持一致   </li>
+<li>前端提交到后台的数据应该是json字符串类型，但是前端没有将对象JSON.stringify转化成字符串。   </li>
+</ul>
+</li>
+<li>解决方法：   <ul>
+<li>对照字段的名称，保持一致性   </li>
+<li>将obj对象通过JSON.stringify实现序列化   </li>
+</ul>
 </li>
 </ul>
 
@@ -963,7 +976,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.4k</span>&nbsp;字
+                class="white-color">8.5k</span>&nbsp;字
             
             
             
