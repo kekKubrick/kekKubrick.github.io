@@ -237,11 +237,61 @@
     
     
     <entry>
-      <title>微信小程序开发赛记录</title>
-      <link href="/2019/04/05/wei-xin-xiao-cheng-xu-kai-fa-sai-ji-lu/"/>
-      <url>/2019/04/05/wei-xin-xiao-cheng-xu-kai-fa-sai-ji-lu/</url>
+      <title>Docker容器与虚拟机区别</title>
+      <link href="/2019/04/05/docker-rong-qi-yu-xu-ni-ji-qu-bie/"/>
+      <url>/2019/04/05/docker-rong-qi-yu-xu-ni-ji-qu-bie/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="产品设计"><a href="#产品设计" class="headerlink" title="产品设计"></a>产品设计</h2><ul><li><p><a href="https://www.imooc.com/learn/795" target="_blank" rel="noopener">axure软件学习课程</a>  </p></li><li><p>原型旁写上操作说明和数据来源、输出结果等信息。</p></li><li><p>微信小程序没有限制5层（<a href="https://segmentfault.com/a/1190000012282464" target="_blank" rel="noopener">微信小程序页面5层限制的一种解决方案</a>），但设计产品的时候，尽量不要进入超过5层，超过了5层，这个产品容易出现问题。</p></li><li><p>Mark Man标注颜色、尺寸</p></li></ul><hr><h2 id="小程序端"><a href="#小程序端" class="headerlink" title="小程序端"></a>小程序端</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><ul><li>使用Color-UI组件库</li></ul><h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><ul><li>引导页</li><li>导航栏:利用navigator组件导航跳转，自定义底部导航栏tarbar样式，并隐藏系统tarBar组件。（自定义封装组件component的好处：各个tarbar页只需调用editTarbar、调用组件即可）</li><li>搜索记录盒子、记录词盒子中词的增加删除：利用数据绑定以及获取缓存，获取历史搜索值，并清空历史搜索值。</li><li>实现指定内容的收藏与取消收藏：longTap事件监听用户是否进行长按，再利用缓存及数据绑定，实现收藏与取消收藏。</li><li>实现滑动选择背景图：使用scroll-view可滚动视图组件。</li><li>用canvas自定义绘图，绘制指定内容(句子信息以及小程序推广二维码)，调用小程序官方API wx.saveImageToPhotosAlbum将图片保存到本地。</li><li>由于canvas绘制过长文字时不会自动换行，因此需要处理文本换行问题，调用drawText。</li><li>调用官方APIcanvasToTempFilePath，将绘制好的图片保存为图片(png类型)（对像素比处理，防止图片模糊）</li><li>利用swiper组件实现滑动切换选项卡操作，利用当前页面currentData，显示对应页面，对应页面为swiper-item内的内容。</li><li>利用模板template生成模板，简易修改。</li><li>通过数据绑定，实现选择菜单后的数据显示，逻辑判断当前菜单选择的数据，更新前端数据current_name。</li><li>小程序右上角转发消息函数onShareAppMessage，自定义转发消息</li><li><a href="https://www.jianshu.com/p/7ad22e35b556" target="_blank" rel="noopener">微信小程序：长按点击事件实现</a></li><li><a href="https://www.jianshu.com/p/96150ed09e3a" target="_blank" rel="noopener">微信小程序实现同时单击、双击、长按</a></li><li><a href="http://www.yiyongtong.com/archives/view-286-1.html" target="_blank" rel="noopener">小程序长按事件触发点击事件的BUG处理</a></li><li><a href="https://www.cnblogs.com/laiqiangjin/p/8963133.html" target="_blank" rel="noopener">小程序的长按事件和点击事件</a></li></ul><hr><h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><ul><li>bmob后端云做数据存储管理</li></ul>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Docker容器与虚拟机区别"><a href="#Docker容器与虚拟机区别" class="headerlink" title="Docker容器与虚拟机区别"></a>Docker容器与虚拟机区别</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>虚拟机运行多个相互隔离的应用时<br><img src="/2019/04/05/docker-rong-qi-yu-xu-ni-ji-qu-bie/1.png" alt="虚拟机运行多个相互隔离的应用时">  </p><p>Docker容器运行多个相互隔离的应用时<br><img src="/2019/04/05/docker-rong-qi-yu-xu-ni-ji-qu-bie/2.png" alt="Docker容器运行多个相互隔离的应用时"></p><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><ul><li><p><strong>基础设施（Infrastructure）</strong>。它可以是你的个人电脑，数据中心的服务器，或者是云主机。</p></li><li><p><strong>主操作系统（Host Operating System）</strong>。你的个人电脑之上，运行的可能是MacOS，Windows或者某个Linux发行版。</p></li><li><p><strong>虚拟机管理系统（Hypervisor）</strong>。利用Hypervisor，可以在主操作系统之上运行多个不同的从操作系统。类型1的Hypervisor有支持MacOS的HyperKit，支持Windows的Hyper-V以及支持Linux的KVM。类型2的Hypervisor有VirtualBox和VMWare。</p></li><li><p><strong>从操作系统（Guest Operating System）</strong>。假设你需要运行3个相互隔离的应用，则需要使用Hypervisor启动3个从操作系统，也就是3个虚拟机。这些虚拟机都非常大，也许有700MB，这就意味着它们将占用2.1GB的磁盘空间。更糟糕的是，它们还会消耗很多CPU和内存。</p></li><li><p><strong>各种依赖</strong>。每一个从操作系统都需要安装许多依赖。如果你的的应用需要连接PostgreSQL的话，则需要安装libpq-dev；如果你使用Ruby的话，应该需要安装gems；如果使用其他编程语言，比如Python或者Node.js，都会需要安装对应的依赖库。</p></li><li><p><strong>应用</strong>。安装依赖之后，就可以在各个从操作系统分别运行应用了，这样各个应用就是相互隔离的。</p></li></ul><h3 id="Docker容器"><a href="#Docker容器" class="headerlink" title="Docker容器"></a>Docker容器</h3><ul><li><p><strong>主操作系统（Host Operating System）</strong>。所有主流的Linux发行版都可以运行Docker。对于MacOS和Windows，也有一些办法”运行”Docker。</p></li><li><p><strong>Docker守护进程（Docker Daemon）</strong>。Docker守护进程取代了Hypervisor，它是运行在操作系统之上的后台进程，负责管理Docker容器。</p></li><li><p><strong>各种依赖</strong>。对于Docker，应用的所有依赖都打包在Docker镜像中，Docker容器是基于Docker镜像创建的。</p></li><li><p><strong>应用</strong>。应用的源代码与它的依赖都打包在Docker镜像中，不同的应用需要不同的Docker镜像。不同的应用运行在不同的Docker容器中，它们是相互隔离的。</p></li></ul><hr><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul><li><p>虚拟机和容器都是在硬件和操作系统以上的。</p></li><li><p><strong>虚拟机有Hypervisor层</strong>，Hypervisor是整个虚拟机的核心所在。他为虚拟机提供了虚拟的运行平台，管理虚拟机的操作系统运行。每个虚拟机都有自己的系统和系统库以及应用。</p></li><li><p><strong>容器没有Hypervisor这一层</strong>，并且每个容器是和宿主机共享硬件资源及操作系统，那么由Hypervisor带来性能的损耗，在linux容器这边是不存在的。</p></li><li><p>但是<strong>虚拟机技术</strong>也有其优势，<strong>能为应用提供一个更加隔离的环境，不会因为应用程序的漏洞给宿主机造成任何威胁。同时还支持跨操作系统的虚拟化</strong>，例如你可以在linux操作系统下运行windows虚拟机。</p></li><li><p>从虚拟化层面来看，传统<strong>虚拟化技术</strong>是对<strong>硬件资源</strong>的虚拟，<strong>容器技术</strong>则是对<strong>进程</strong>的虚拟，从而可提供更轻量级的虚拟化，实现进程和资源的隔离。</p></li><li><p>从架构来看，Docker比虚拟化少了两层，取消了hypervisor层和GuestOS层，使用 Docker Engine 进行调度和隔离，所有应用共用主机操作系统，因此在体量上，<strong>Docker较虚拟机更轻量级，在性能上优于虚拟化</strong>，接近裸机性能。</p></li><li><p>从应用场景来看，Docker和虚拟化则有各自擅长的领域，在软件开发、测试场景和生产运维场景中各有优劣</p></li></ul><h3 id="具体对比："><a href="#具体对比：" class="headerlink" title="具体对比："></a>具体对比：</h3><ol><li><p>docker启动快速属于<strong>秒</strong>级别。虚拟机通常需要<strong>几分钟</strong>去启动。  </p></li><li><p>docker需要的资源更少，docker在操作系统级别进行虚拟化，docker容器和内核交互，<strong>几乎没有性能损耗</strong>，性能优于通过Hypervisor层与内核层的虚拟化。</p></li><li><p>docker<strong>更轻量</strong>，docker的架构可以共用一个内核与共享应用程序库，所占内存极小。同样的硬件环境，Docker运行的<strong>镜像数远多于虚拟机数量。对系统的利用率非常高</strong>。</p></li><li><p>与虚拟机相比，docker<strong>隔离性更弱</strong>，docker属于<strong>进程之间的隔离</strong>，虚拟机可实现<strong>系统级别隔离</strong>  </p></li><li><p>安全性： docker的<strong>安全性也更弱</strong>。Docker的租户root和宿主机root等同，一旦容器内的用户从普通用户权限提升为root权限，它就直接具备了宿主机的root权限，进而可进行无限制的操作。虚拟机租户root权限和宿主机的root虚拟机权限是分离的，并且虚拟机利用如Intel的VT-d和VT-x的ring-1硬件隔离技术，这种隔离技术可以防止虚拟机突破和彼此交互，而容器至今还没有任何形式的硬件隔离，这使得<strong>容器容易受到攻击</strong>。  </p></li><li><p>可管理性：docker的集中化管理工具还不算成熟。各种虚拟化技术都有<strong>成熟的管理工具</strong>，例如VMware vCenter提供完备的虚拟机管理能力。  </p></li><li><p>高可用和可恢复性：docker对业务的高可用支持是通过<strong>快速重新部署</strong>实现的。虚拟化具备<strong>负载均衡，高可用，容错，迁移和数据保护等经过生产实践检验的成熟保障机制</strong>，VMware可承诺虚拟机99.999%高可用，保证业务连续性。  </p></li><li><p>快速创建、删除：虚拟化创建是<strong>分钟</strong>级别的，Docker容器创建是<strong>秒</strong>级别的，Docker的快速迭代性，决定了无论是开发、测试、部署都可以节约大量时间。 </p></li><li><p>交付、部署：虚拟机可以通过镜像实现环境交付的一致性，但镜像分发无法体系化；Docker在Dockerfile中记录了容器构建过程，可<strong>在集群中实现快速分发和快速部署</strong>。</p></li></ol><h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p><a href="https://www.jianshu.com/p/50f48eb25215" target="_blank" rel="noopener">【Docker&amp;VM】docker容器与虚拟机有什么区别？</a></p><p><a href="https://www.cnblogs.com/pangguoping/articles/5515286.html" target="_blank" rel="noopener">Docker容器与虚拟机区别</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity中预计算实时全局光（（Precompute Realtime GI））</title>
+      <link href="/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/"/>
+      <url>/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Unity中预计算实时全局光（（Precompute-Realtime-GI））"><a href="#Unity中预计算实时全局光（（Precompute-Realtime-GI））" class="headerlink" title="Unity中预计算实时全局光（（Precompute Realtime GI））"></a>Unity中预计算实时全局光（（Precompute Realtime GI））</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul><li>Unity中的全局光照有两种，烘培光和预计算全局光（预计算实时全局光）（Precompute Realtime GI）。烘焙全局光照和预计算实时全局光照，都是Unity为了提供更复杂的光照效果，同时避免实时光照计算在运行时带来的大量的性能消耗而产生的解决方案。</li><li><a href="https://blog.csdn.net/qq_40229737/article/details/89451691?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2" target="_blank" rel="noopener">全局光照具体介绍(附图文)</a></li></ul><h3 id="预计算实时全局光与烘焙全局光的不同"><a href="#预计算实时全局光与烘焙全局光的不同" class="headerlink" title="预计算实时全局光与烘焙全局光的不同"></a>预计算实时全局光与烘焙全局光的不同</h3><ul><li><p>烘焙全局光只能处理<strong>静态</strong>的物体，并且其光源在运行时和烘焙时需要保持一致，可以认为是一个完全静态的场景。</p></li><li><p>预计算实时全局光预计算我们在构建场景时，已经设定好的光在该表面中的反射，计算任意可能的光在该表面会造成的反射效果。将各种可能的光照的反射信息预计算后，编码保存起来，供运行时使用。（Unity保存了关于光可以传播哪些路径的信息，以便以后使用。最后的光照是在运行时通过将实际的光输入到这些先前计算的光传播路径中完成的。这意味着灯的数量、类型、位置、方向和其他属性都可以改变，间接光照也会相应更新。同样，也可以改变物体的材质属性，比如它们的颜色，它们吸收多少光，或者它们发出多少光。）</p></li><li><p>预计算实时全局光虽然也要求针对<strong>静态</strong>的物体，但却可以处理在运行时，<strong>有一定改变的光源</strong>。它的<strong>适应性比烘焙全局光更好</strong>。所以我们可以通过它获得更好的光照效果和比较好的运行时性能表现。</p></li><li><p>虽然预计算的实时GI也会生成软阴影，但它们通常比烘焙GI更粗糙，除非这个场景非常小。还要注意的是，虽然预计算的实时GI在运行时完成了最终的照明，但它需要在几帧上进行迭代，所以如果在照明中做了一个大的改变，那么它将需要更多的帧来完全生效。虽然这对于实时应用来说已经足够快了，但是如果目标平台的资源非常有限，那么最好使用烘焙的GI来获得更好的运行时性能。</p></li><li><p>烘焙GI和预计算的实时GI都有限制，只有静态对象可以包含在烤焙/预计算中——所以移动的对象不能将光反弹到其他物体上，反之亦然。</p></li></ul><h3 id="优化预计算实时全局光"><a href="#优化预计算实时全局光" class="headerlink" title="优化预计算实时全局光"></a>优化预计算实时全局光</h3><h4 id="优化涉及概念"><a href="#优化涉及概念" class="headerlink" title="优化涉及概念"></a>优化涉及概念</h4><p><a href="https://blog.csdn.net/duotemplar/article/details/80554342" target="_blank" rel="noopener">涉及概念</a></p><h4 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h4><ul><li><a href="https://blog.csdn.net/duotemplar/article/details/80672365" target="_blank" rel="noopener">完全理解Unity预计算全局光照及其优化（二）</a></li><li>官方文档</li></ul><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p><a href="https://blog.csdn.net/qq_40229737/article/details/89451691?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2" target="_blank" rel="noopener">全局光照具体介绍(附图文)</a></p><p><a href="https://blog.csdn.net/duotemplar/article/details/80554342" target="_blank" rel="noopener">完全理解Unity预计算全局光照及其优化（一）</a></p><p><a href="https://blog.csdn.net/duotemplar/article/details/80672365" target="_blank" rel="noopener">完全理解Unity预计算全局光照及其优化（二）</a></p><p><a href="https://blog.csdn.net/cangod/article/details/80706981?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">Unity Global Illumination(Unity 全局光照 ) 官方手册笔记系列之Global Illumination(全局光照)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小程序开发赛记录</title>
+      <link href="/2019/04/05/xiao-cheng-xu-kai-fa-sai-ji-lu/"/>
+      <url>/2019/04/05/xiao-cheng-xu-kai-fa-sai-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="产品设计"><a href="#产品设计" class="headerlink" title="产品设计"></a>产品设计</h2><ul><li><p><a href="https://www.imooc.com/learn/795" target="_blank" rel="noopener">axure软件学习课程</a>  </p></li><li><p><a href="https://www.appannie.com/cn/apps/ios/top/" target="_blank" rel="noopener">appannie ios排行</a></p></li><li><p>原型旁写上操作说明和数据来源、输出结果等信息。</p></li><li><p>微信小程序没有限制5层（<a href="https://segmentfault.com/a/1190000012282464" target="_blank" rel="noopener">微信小程序页面5层限制的一种解决方案</a>），但设计产品的时候，尽量不要进入超过5层，超过了5层，这个产品容易出现问题。</p></li><li><p>Mark Man标注颜色、尺寸</p></li></ul><hr><h2 id="小程序端"><a href="#小程序端" class="headerlink" title="小程序端"></a>小程序端</h2><h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><ul><li>使用Color-UI组件库</li></ul><h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><ul><li>引导页</li><li>导航栏:利用navigator组件导航跳转，自定义底部导航栏tarbar样式，并隐藏系统tarBar组件。（自定义封装组件component的好处：各个tarbar页只需调用editTarbar、调用组件即可）</li><li>搜索记录盒子、记录词盒子中词的增加删除：利用数据绑定以及获取缓存，获取历史搜索值，并清空历史搜索值。</li><li>实现指定内容的收藏与取消收藏：longTap事件监听用户是否进行长按，再利用缓存及数据绑定，实现收藏与取消收藏。</li><li>实现滑动选择背景图：使用scroll-view可滚动视图组件。</li><li>用canvas自定义绘图，绘制指定内容(句子信息以及小程序推广二维码)，调用小程序官方API wx.saveImageToPhotosAlbum将图片保存到本地。</li><li>由于canvas绘制过长文字时不会自动换行，因此需要处理文本换行问题，调用drawText。</li><li>调用官方APIcanvasToTempFilePath，将绘制好的图片保存为图片(png类型)（对像素比处理，防止图片模糊）</li><li>利用swiper组件实现滑动切换选项卡操作，利用当前页面currentData，显示对应页面，对应页面为swiper-item内的内容。</li><li>利用模板template生成模板，简易修改。</li><li>通过数据绑定，实现选择菜单后的数据显示，逻辑判断当前菜单选择的数据，更新前端数据current_name。</li><li>小程序右上角转发消息函数onShareAppMessage，自定义转发消息</li><li><a href="https://www.jianshu.com/p/7ad22e35b556" target="_blank" rel="noopener">微信小程序：长按点击事件实现</a></li><li><a href="https://www.jianshu.com/p/96150ed09e3a" target="_blank" rel="noopener">微信小程序实现同时单击、双击、长按</a></li><li><a href="http://www.yiyongtong.com/archives/view-286-1.html" target="_blank" rel="noopener">小程序长按事件触发点击事件的BUG处理</a></li><li><a href="https://www.cnblogs.com/laiqiangjin/p/8963133.html" target="_blank" rel="noopener">小程序的长按事件和点击事件</a></li></ul><hr><h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><ul><li>bmob后端云做数据存储管理</li></ul>]]></content>
       
       
       <categories>
@@ -254,6 +304,31 @@
         <tags>
             
             <tag> 小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>游戏开发常用</title>
+      <link href="/2019/04/05/you-xi-kai-fa-chang-yong/"/>
+      <url>/2019/04/05/you-xi-kai-fa-chang-yong/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="游戏开发常用"><a href="#游戏开发常用" class="headerlink" title="游戏开发常用"></a>游戏开发常用</h1><h2 id="社区平台"><a href="#社区平台" class="headerlink" title="社区平台"></a>社区平台</h2><ul><li><p><a href="www.taptap.com">taptap</a></p></li><li><p><a href="www.vgtime.com">游戏时光</a></p></li><li><p><a href="http://youxiputao.com/" target="_blank" rel="noopener">游戏葡萄</a></p></li><li><p><a href="https://www.gameres.com/" target="_blank" rel="noopener">gameres游资网</a></p></li><li><p><a href="https://www.gamespot.com/" target="_blank" rel="noopener">GameSpot</a></p></li><li><p><a href="https://www.appannie.com/cn/apps/ios/top/" target="_blank" rel="noopener">appannie ios排行</a></p></li><li><p><a href="https://gameinstitute.qq.com/minigame" target="_blank" rel="noopener">腾讯游戏学院</a></p></li><li><p><a href="https://game.academy.163.com/activity" target="_blank" rel="noopener">网易游戏学院</a></p></li></ul><h2 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h2><h3 id="cocos学习资源"><a href="#cocos学习资源" class="headerlink" title="cocos学习资源"></a>cocos学习资源</h3><ul><li><p><a href="https://www.bilibili.com/video/BV1g4411174p?from=search&seid=7662706387585459565" target="_blank" rel="noopener">cocos工具基础介绍</a></p></li><li><p><a href="https://www.bilibili.com/video/BV1c4411F75N?from=search&seid=7662706387585459565" target="_blank" rel="noopener">cocos官方教程（含项目教程）</a></p></li><li><p><a href="https://www.zhihu.com/answer/301810933" target="_blank" rel="noopener">微信小游戏开发资源目录</a></p></li></ul><h3 id="unity"><a href="#unity" class="headerlink" title="unity"></a>unity</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
             
         </tags>
       
