@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="unity渲染优化技术：批处理减少DrawCall, kekekubrick">
-    <meta name="description" content="批处理、动态批处理、静态批处理">
+    <meta name="keywords" content="模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间), kekekubrick">
+    <meta name="description" content="模型、世界、观察/摄像机、裁剪、屏幕空间的坐标变换">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>unity渲染优化技术：批处理减少DrawCall | kekekubrick</title>
+    <title>模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间) | kekekubrick</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -202,7 +202,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">unity渲染优化技术：批处理减少DrawCall</h1>
+                    <h1 class="description center-align post-title">模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间)</h1>
                 </div>
             </div>
         </div>
@@ -324,6 +324,10 @@
                                 <span class="chip bg-color">游戏</span>
                             </a>
                         
+                            <a href="/tags/unity/">
+                                <span class="chip bg-color">unity</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -359,14 +363,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    71
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    1 分
                 </div>
                 
 				
@@ -382,76 +386,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="unity渲染优化技术：批处理减少DrawCall"><a href="#unity渲染优化技术：批处理减少DrawCall" class="headerlink" title="unity渲染优化技术：批处理减少DrawCall"></a>unity渲染优化技术：批处理减少DrawCall</h2><h3 id="DrawCall"><a href="#DrawCall" class="headerlink" title="DrawCall"></a>DrawCall</h3><p>DrawCall是CPU调用图像编程接口，以命令GPU进行渲染的操作。  </p>
-<p>渲染流程采用流水线实现，CPU和GPU并行工作，它们之间通过命令缓冲区连接，CPU向其中发送渲染命令，GPU接收并执行对应的渲染命令。</p>
-<p>对DrawCall的优化，主要就是为了尽量解放CPU在调用图形接口上的开销。所以针对drawcall我们主要的思路就是每个物体尽量减少渲染次数，多个物体最好一起渲染。</p>
-<hr>
-<h3 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h3><ol>
-<li><p><strong>原理（目的）</strong> : <strong>减少每一帧需要的DrawCall数目</strong>。</p>
-<ul>
-<li><p>为了把一个对象渲染到屏幕上，<strong>CPU</strong>需要检查哪些光源影响了该物体，绑定shader并设置它的参数，再把渲染命令发送给<strong>GPU</strong> 。当场景中包含了大量对象时，这些操作就会非常耗时。</p>
-<ul>
-<li>例子：如果我们需要渲染一千个三角形，把他们按一千个单独的网格进行渲染所花费的时间要远远大于渲染一个包含了一千个三角形的网格。在这两种情况下，GPU的性能消耗其实并没有多大的区别，但CPU的draw call数目就会成为性能瓶颈。</li>
-</ul>
+                <h2 id="模型空间到屏幕空间-模型、世界、观察-摄像机、裁剪、屏幕空间"><a href="#模型空间到屏幕空间-模型、世界、观察-摄像机、裁剪、屏幕空间" class="headerlink" title="模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间)"></a>模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间)</h2><h3 id="变换过程图解"><a href="#变换过程图解" class="headerlink" title="变换过程图解"></a>变换过程图解</h3><p><img src="/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/1.png" alt="变换过程图解"></p>
+<h3 id="具体坐标变换过程"><a href="#具体坐标变换过程" class="headerlink" title="具体坐标变换过程"></a>具体坐标变换过程</h3><ul>
+<li><p>unityshader入门精要 第四章</p>
 </li>
-<li><p>因此，<strong>批处理的思想很简单，就是在每次调用draw call时尽可能多地处理多个物体</strong>。</p>
+<li><p><a href="http://www.idivecat.com/archives/631" target="_blank" rel="noopener">模型空间到屏幕空间</a></p>
 </li>
-<li><p><strong>使用一个材质的物体</strong>可以一起处理。因为对于使用一个材质的物体，它们之间的不同仅仅在于顶点数据的差别。我们可以把这些顶点数据合并在一起，在一起发送给GPU，就可以完成一次批处理。</p>
+<li><p><a href="https://gameinstitute.qq.com/community/detail/127995" target="_blank" rel="noopener">Unity3D - Shader - 模型、世界、观察、裁剪空间坐标转换</a></p>
 </li>
 </ul>
-</li>
-<li><p>unity中支持两种批处理方式：一种是动态批处理，一种是静态批处理。  </p>
-</li>
-</ol>
-<h4 id="动态批处理"><a href="#动态批处理" class="headerlink" title="动态批处理"></a>动态批处理</h4><h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p>每一帧把可以进行批处理的模型网格进行合并，再把合并后模型数据传递给GPU，然后使用同一个材质对其渲染。</p>
-<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p>一切处理都是<strong>unity自动完成</strong>，不需要我们自己做任何操作，而且物体是<strong>可以移动的</strong>，这是由于在处理每帧时Unity都会重新合并一次网格。</p>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><p><strong>限制很多</strong>，可能一不小心就破坏了这种机制，导致unity无法动态批处理一些使用了相同材质的物体。</p>
-<h5 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h5><ol>
-<li><p>能够进行动态批处理的网格的<strong>顶点属性要小于900</strong>。例如，如果shader中需要使用顶点位置、法线和纹理坐标这三个顶点属性，那么要想让模型能够被动态批处理，它的顶点数目不能超过300。因此，优化策略就是shader的优化，少使用顶点属性，或者模型顶点数要尽可能少。</p>
-</li>
-<li><p><strong>多Pass的shader会中断批处理</strong>。在前向渲染中，我们有时需要额外的Pass来为模型添加更多的光照效果，但这样一来模型就不会被动态批处理了。</p>
-</li>
-<li><p>使用光照纹理（<a href="https://wenku.baidu.com/view/a8d890ded15abe23482f4d5b" target="_blank" rel="noopener">lightmap</a>）的物体需要小心处理。<strong>为了让这些物体可以被动态批处理，需要保证它们指向光照纹理中的同一位置</strong>。</p>
-</li>
-<li><p>在unity5中，<strong>动态批处理对于模型缩放的限制已经不存在了</strong>。(模型缩放：一般来说，所有对象都需要使用同一个缩放尺度（可以是（1,1,1）、（1,2,3），（1.5,1.4,1.3）等，但必须都一样）。一个例外情况下，如果所有的物体都使用了不同的非同一缩放，那么他们也是可以被动态批处理的。)</p>
-</li>
-</ol>
-<h5 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h5><ol>
-<li>当对场景中的物体进行修改时，有时需要点击一下Game视图，渲染统计窗口才会刷新。</li>
-<li>Pass越多DrawCall越大。可以通过FrameDebugger来查看DrawCall，当然也可以用Profiler，但后者不能查看DrawCall的具体情况。</li>
-<li>经过动态批处理后，相同材质的物体只占一个DC。</li>
-<li>对于顶点数太多的物体，无法进行动态批处理，无法减少DC。</li>
-<li>不同材质的物体，无法进行动态批处理，无法减少DC。</li>
-<li>对于顶点属性太多的物体(&gt;900)，可以使用静态批处理来减少DC。</li>
-<li>不同材质的物体，无法通过静态批处理减少DC。但是静态批处理可以通过合并网格来提高性能。</li>
-</ol>
-<h4 id="静态批处理"><a href="#静态批处理" class="headerlink" title="静态批处理"></a>静态批处理</h4><p>适用于任何大小的几何模型，</p>
-<h5 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h5><p>只在运行开始阶段，把需要进行静态批处理的模型合并到一个新的网格中，这意味着这些模型数据不可以在运行时刻被移动。</p>
-<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><p><strong>自由度很高，限制很少</strong>。因为它只需要进行一次合并操作，因此比动态批处理更加高效。</p>
-<h5 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h5><p>需要<strong>占用更多的内存</strong>来存储合并后的几何结构。，而且经过静态批处理后的所有物体都<strong>不可以再移动</strong>（即便在脚本中尝试改变物体的位置也是无效的）。  </p>
-<ul>
-<li>这是因为，如果在静态批处理前一些物体共享了相同的网格，那么在内存中每一个物体都会对应一个该网格的复制品，即一个网格会变成多个网格再发送给GPU。如果这类使用同一网格的对象很多，那么这就会成为一个性能瓶颈了。  </li>
-<li>例如一个使用了1000个相同树模型的森林中使用静态批处理，那么就会多使用1000倍的内存，这会造成严重的内存影响。这种时候，解决方法要么忍受这种牺牲内存换取性能的方法，要么不要使用静态批处理，而使用动态批处理技术（但要小心控制模型的顶点属性数目），或者自己编写批处理的方法。</li>
-</ul>
-<h5 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h5><p>将Inspector面板右上角的Static勾选(实际上只需要勾选Batching Static即可)</p>
-<h3 id="批处理注意事项"><a href="#批处理注意事项" class="headerlink" title="批处理注意事项"></a>批处理注意事项</h3><ol>
-<li><p>尽可能选择静态批处理，但得时刻小心对内存的消耗，并且记住经过静态批处理的物体不可以再被移动。</p>
-</li>
-<li><p>如果无法进行静态批处理，而要使用动态批处理，小心上面提到的各种条件限制。例如尽可能让这样的物体少并且尽可能让这些物体包含少量的顶点属性和顶点数目。</p>
-</li>
-<li><p>对于游戏中的小道具，例如可以捡拾的金币等，可以使用动态批处理。</p>
-</li>
-<li><p>对于包含动画的这类物体，我们无法全部使用静态批处理，但其中如果有不动的部分，可以把这部分标识成“static”。</p>
-</li>
-<li><p>由于批处理需要把多个模型变换到世界空间下再合并它们，因此如果shader中存在一些基于模型空间下的坐标运算，那么往往会得到错误的结果。一种解决方法是，在shader中使用DisableBatching标签来强制使用该shader的材质不会被批处理。</p>
-</li>
-<li><p>使用半透明材质的物体通常需要使用严格的从后往前的绘制顺序来保证透明混合的正确性。对于这些物体，unity会首先保证它们的绘制顺序，再尝试对它们进行批处理。这意味着，当绘制顺序无法满足时，批处理无法在这些物体上被成功应用。</p>
-</li>
-</ol>
-<hr>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://blog.csdn.net/cgy56191948/article/details/102916533" target="_blank" rel="noopener">unity中的渲染优化技术（减少draw call数目 方法一：动态批处理）</a></p>
-<p><a href="https://blog.csdn.net/cgy56191948/article/details/102950175" target="_blank" rel="noopener">unity中的渲染优化技术（减少draw call数目 方法二：静态批处理、共享材质、批处理的选择）</a></p>
-<p><a href="https://blog.csdn.net/lyh916/article/details/45725499?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4" target="_blank" rel="noopener">Unity优化 减少DrawCall：批处理</a></p>
 
             </div>
             <hr/>
@@ -477,7 +420,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kekekubrick.com/2019/04/05/unity-xuan-ran-you-hua-ji-zhu-pi-chu-li-jian-shao-drawcall/">https://kekekubrick.com/2019/04/05/unity-xuan-ran-you-hua-ji-zhu-pi-chu-li-jian-shao-drawcall/</a>
+                    <a href="https://kekekubrick.com/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/">https://kekekubrick.com/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -517,6 +460,10 @@
                             
                                 <a href="/tags/%E6%B8%B8%E6%88%8F/">
                                     <span class="chip bg-color">游戏</span>
+                                </a>
+                            
+                                <a href="/tags/unity/">
+                                    <span class="chip bg-color">unity</span>
                                 </a>
                             
                         </div>
@@ -712,24 +659,72 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/">
+                <a href="/2019/04/05/xiao-cheng-xu-kai-fa-sai-ji-lu/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Unity中预计算实时全局光（（Precompute Realtime GI））">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="小程序开发赛记录">
                         
-                        <span class="card-title">Unity中预计算实时全局光（（Precompute Realtime GI））</span>
+                        <span class="card-title">小程序开发赛记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            预计算实时全局光概念、与烘焙全局光的不同、优化方法
+                            产品设计、UI、前后端技术
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="far fa-clock fa-fw icon-date"></i>2019-04-05
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-category">
+                                    小程序
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/05/you-xi-kai-fa-chang-yong/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="游戏开发常用">
+                        
+                        <span class="card-title">游戏开发常用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            常用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -747,54 +742,6 @@
                     
                     <a href="/tags/%E6%B8%B8%E6%88%8F/">
                         <span class="chip bg-color">游戏</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/04/05/docker-rong-qi-yu-xu-ni-ji-qu-bie/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Docker容器与虚拟机区别">
-                        
-                        <span class="card-title">Docker容器与虚拟机区别</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Docker容器与虚拟机的概念、区别
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    操作系统
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>
@@ -981,7 +928,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">19.9k</span>&nbsp;字
+                class="white-color">20.7k</span>&nbsp;字
             
             
             

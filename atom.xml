@@ -268,11 +268,11 @@
   </entry>
   
   <entry>
-    <title>Unity中预计算实时全局光（（Precompute Realtime GI））</title>
-    <link href="https://kekekubrick.com/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/"/>
-    <id>https://kekekubrick.com/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/</id>
-    <published>2019-04-05T01:25:00.000Z</published>
-    <updated>2020-04-15T04:31:06.613Z</updated>
+    <title>unity渲染优化技术：批处理减少DrawCall</title>
+    <link href="https://kekekubrick.com/2019/06/05/unity-xuan-ran-you-hua-ji-zhu-pi-chu-li-jian-shao-drawcall/"/>
+    <id>https://kekekubrick.com/2019/06/05/unity-xuan-ran-you-hua-ji-zhu-pi-chu-li-jian-shao-drawcall/</id>
+    <published>2019-06-05T01:25:00.000Z</published>
+    <updated>2020-04-15T13:42:07.123Z</updated>
     
     <summary type="html">
     
@@ -291,15 +291,17 @@
     
     
       <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
     
   </entry>
   
   <entry>
-    <title>unity渲染优化技术：批处理减少DrawCall</title>
-    <link href="https://kekekubrick.com/2019/04/05/unity-xuan-ran-you-hua-ji-zhu-pi-chu-li-jian-shao-drawcall/"/>
-    <id>https://kekekubrick.com/2019/04/05/unity-xuan-ran-you-hua-ji-zhu-pi-chu-li-jian-shao-drawcall/</id>
-    <published>2019-04-05T01:25:00.000Z</published>
-    <updated>2020-04-15T10:36:14.325Z</updated>
+    <title>剔除方法</title>
+    <link href="https://kekekubrick.com/2019/06/05/ti-chu-fang-fa/"/>
+    <id>https://kekekubrick.com/2019/06/05/ti-chu-fang-fa/</id>
+    <published>2019-06-05T01:25:00.000Z</published>
+    <updated>2020-04-15T14:12:07.212Z</updated>
     
     <summary type="html">
     
@@ -318,6 +320,8 @@
     
     
       <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
     
   </entry>
   
@@ -349,6 +353,35 @@
   </entry>
   
   <entry>
+    <title>Unity中预计算实时全局光（（Precompute Realtime GI））</title>
+    <link href="https://kekekubrick.com/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/"/>
+    <id>https://kekekubrick.com/2019/04/05/unity-zhong-precompute-realtime-gi-ji-qi-you-hua/</id>
+    <published>2019-04-05T01:25:00.000Z</published>
+    <updated>2020-04-15T12:35:40.889Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
+  
+  <entry>
     <title>小程序开发赛记录</title>
     <link href="https://kekekubrick.com/2019/04/05/xiao-cheng-xu-kai-fa-sai-ji-lu/"/>
     <id>https://kekekubrick.com/2019/04/05/xiao-cheng-xu-kai-fa-sai-ji-lu/</id>
@@ -376,11 +409,40 @@
   </entry>
   
   <entry>
+    <title>模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间)</title>
+    <link href="https://kekekubrick.com/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/"/>
+    <id>https://kekekubrick.com/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/</id>
+    <published>2019-04-05T01:25:00.000Z</published>
+    <updated>2020-04-15T12:35:18.383Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
+  
+  <entry>
     <title>游戏开发常用</title>
     <link href="https://kekekubrick.com/2019/04/05/you-xi-kai-fa-chang-yong/"/>
     <id>https://kekekubrick.com/2019/04/05/you-xi-kai-fa-chang-yong/</id>
     <published>2019-04-05T01:25:00.000Z</published>
-    <updated>2020-04-14T15:31:55.928Z</updated>
+    <updated>2020-04-15T12:36:16.048Z</updated>
     
     <summary type="html">
     
