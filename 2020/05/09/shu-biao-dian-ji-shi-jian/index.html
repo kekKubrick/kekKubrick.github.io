@@ -387,25 +387,25 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="鼠标点击事件"><a href="#鼠标点击事件" class="headerlink" title="鼠标点击事件"></a>鼠标点击事件</h2><h3 id="一般鼠标点击事件"><a href="#一般鼠标点击事件" class="headerlink" title="一般鼠标点击事件"></a>一般鼠标点击事件</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件:"></a>鼠标事件:</h4><p>OnMouseDown：当鼠标上的按钮被按下时触发的事件；<br>OnMouseDrag：当用户鼠标拖拽GUI元素或碰撞体时调用；<br>OnMouseEnter：当鼠标进入物体范围时被调用；<br>OnMouseExit：当鼠标退出时被调用；<br>OnMouseOver：当鼠标移动到某对象的上方时触发的事件；<br>OnMouseUp：当鼠标按键被松开时触发的事件  </p>
-<h4 id="onmousedown示例代码："><a href="#onmousedown示例代码：" class="headerlink" title="onmousedown示例代码："></a>onmousedown示例代码：</h4><pre class=" language-c#"><code class="language-c#">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
+<h4 id="onmousedown示例代码："><a href="#onmousedown示例代码：" class="headerlink" title="onmousedown示例代码："></a>onmousedown示例代码：</h4><pre class=" language-c"><code class="language-c">using System<span class="token punctuation">.</span>Collections<span class="token punctuation">;</span>
+using System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>UI<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>EventSystems<span class="token punctuation">;</span>
 
-public class Script1 : MonoBehaviour
-{
+public class Script1 <span class="token punctuation">:</span> MonoBehaviour
+<span class="token punctuation">{</span>
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    <span class="token comment" spellcheck="true">// Start is called before the first frame update</span>
+    <span class="token keyword">void</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
 
-    }
-    private void OnMouseDown()
-    {
-        Debug.Log("OnMouseDown response");
-    }    
-}</code></pre>
+    <span class="token punctuation">}</span>
+    private <span class="token keyword">void</span> <span class="token function">OnMouseDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"OnMouseDown response"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span></code></pre>
 <h4 id="一般onmousedown无效的原因："><a href="#一般onmousedown无效的原因：" class="headerlink" title="一般onmousedown无效的原因："></a>一般onmousedown无效的原因：</h4><ol>
 <li>代码：代码没有附加上要点击的物体上；（可以直接使用脚本或通过button组件的On Click添加对象方法）</li>
 <li>碰撞：要点击的物体没有加碰撞器和刚体；要点击的物体加了碰撞，位置大小都对，但鼠标屏幕点击的点和它之间有其他的碰撞遮挡（OnMouseDown()原理利用了射线）；</li>

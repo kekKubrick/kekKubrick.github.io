@@ -387,31 +387,31 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="切换摄像头"><a href="#切换摄像头" class="headerlink" title="切换摄像头"></a>切换摄像头</h2><p>使用SetActive激活、关闭</p>
-<pre class=" language-c#"><code class="language-c#">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
+<pre class=" language-c"><code class="language-c">using System<span class="token punctuation">.</span>Collections<span class="token punctuation">;</span>
+using System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>UI<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>EventSystems<span class="token punctuation">;</span>
 
-public class MoveCameraScript1 : MonoBehaviour
-{
+public class MoveCameraScript1 <span class="token punctuation">:</span> MonoBehaviour
+<span class="token punctuation">{</span>
 
-    public GameObject camera_2;
-    public GameObject camera_3;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public GameObject camera_2<span class="token punctuation">;</span>
+    public GameObject camera_3<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Start is called before the first frame update</span>
+    <span class="token keyword">void</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
 
-        camera_3.SetActive(false);
+        camera_3<span class="token punctuation">.</span><span class="token function">SetActive</span><span class="token punctuation">(</span>false<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    }
-    private void OnMouseDown()
-    {
-        Debug.Log("OnMouseDown response");
-        camera_2.SetActive(false);
-        camera_3.SetActive(true);
-    }    
-}</code></pre>
+    <span class="token punctuation">}</span>
+    private <span class="token keyword">void</span> <span class="token function">OnMouseDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"OnMouseDown response"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        camera_2<span class="token punctuation">.</span><span class="token function">SetActive</span><span class="token punctuation">(</span>false<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        camera_3<span class="token punctuation">.</span><span class="token function">SetActive</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>

@@ -386,27 +386,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Mash绘制简单图形"><a href="#Mash绘制简单图形" class="headerlink" title="Mash绘制简单图形"></a>Mash绘制简单图形</h2><pre class=" language-c#"><code class="language-c#">using UnityEngine;
-using UnityEngine.UI;
+                <h2 id="Mash绘制简单图形"><a href="#Mash绘制简单图形" class="headerlink" title="Mash绘制简单图形"></a>Mash绘制简单图形</h2><pre class=" language-c"><code class="language-c">using UnityEngine<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>UI<span class="token punctuation">;</span>
 
-public class  MashScript: BaseMeshEffect
-{
+public class  MashScript<span class="token punctuation">:</span> BaseMeshEffect
+<span class="token punctuation">{</span>
 
-    public override void ModifyMesh(VertexHelper vh)
-    {
-        vh.Clear();
-        //new Vector3(20, 0)设置顶点坐标，Color.white设置颜色
-        vh.AddVert(new Vector3(20, 0), Color.white, Vector2.zero);//0
-        vh.AddVert(new Vector3(20, -36), Color.white, Vector2.zero);//1
-        vh.AddVert(new Vector3(36, -36), Color.white, Vector2.zero);//2
-        vh.AddVert(new Vector3(36, 0), Color.white, Vector2.zero);//3
-        vh.AddVert(new Vector3(0, -18), Color.white, Vector2.zero);//4
-        //设置顶点绘制顺序
-        vh.AddTriangle(0, 1, 2);
-        vh.AddTriangle(2, 3, 0);
-        vh.AddTriangle(4, 1, 0);
-    }
-}</code></pre>
+    public override <span class="token keyword">void</span> <span class="token function">ModifyMesh</span><span class="token punctuation">(</span>VertexHelper vh<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        vh<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//new Vector3(20, 0)设置顶点坐标，Color.white设置颜色</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector3</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Color<span class="token punctuation">.</span>white<span class="token punctuation">,</span> Vector2<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//0</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector3</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Color<span class="token punctuation">.</span>white<span class="token punctuation">,</span> Vector2<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//1</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector3</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Color<span class="token punctuation">.</span>white<span class="token punctuation">,</span> Vector2<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//2</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector3</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Color<span class="token punctuation">.</span>white<span class="token punctuation">,</span> Vector2<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//3</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Color<span class="token punctuation">.</span>white<span class="token punctuation">,</span> Vector2<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//4</span>
+        <span class="token comment" spellcheck="true">//设置顶点绘制顺序</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>

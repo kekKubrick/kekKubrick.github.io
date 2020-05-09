@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    808
+                    799
                 </div>
                 
 
@@ -389,124 +389,125 @@
                 <h2 id="UIImage设置圆角矩形"><a href="#UIImage设置圆角矩形" class="headerlink" title="UIImage设置圆角矩形"></a>UIImage设置圆角矩形</h2><p>来自<br><a href="https://blog.csdn.net/qq_34407719/article/details/83828179" target="_blank" rel="noopener">Unity3D UGUI 性能耗费最小的一种UI渲染方式RawImage实现,圆角矩形,圆形,多边形等图片</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/32561155" target="_blank" rel="noopener">Unity填坑笔记（三）—ugui中针对单独图片的Mask优化</a></p>
 <p>脚本：</p>
-<pre><code>using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
-/// &lt;summary&gt;
-/// 圆角矩形
-/// &lt;/summary&gt;
+<pre class=" language-c"><code class="language-c">using UnityEngine<span class="token punctuation">;</span>
+using System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>UI<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/// &lt;summary></span>
+<span class="token comment" spellcheck="true">/// 圆角矩形</span>
+<span class="token comment" spellcheck="true">/// &lt;/summary></span>
 
-public class UIRoundedRawImage : RawImage
-{
-    public float Radius = 5f;//内切圆半径 
-    public int TriangleNum = 6;//每个扇形三角形个数，个数越大弧度越平滑
-    protected override void OnPopulateMesh(VertexHelper vh)
-    {
-        vh.Clear();
-        float tw = rectTransform.rect.width;//图片的宽
-        float th = rectTransform.rect.height;//图片的高
-        float twr = tw / 2;
-        float thr = th / 2;
+public class UIRoundedRawImage <span class="token punctuation">:</span> RawImage
+<span class="token punctuation">{</span>
+    public <span class="token keyword">float</span> Radius <span class="token operator">=</span> <span class="token number">5f</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//内切圆半径 </span>
+    public <span class="token keyword">int</span> TriangleNum <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//每个扇形三角形个数，个数越大弧度越平滑</span>
+    protected override <span class="token keyword">void</span> <span class="token function">OnPopulateMesh</span><span class="token punctuation">(</span>VertexHelper vh<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        vh<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> tw <span class="token operator">=</span> rectTransform<span class="token punctuation">.</span>rect<span class="token punctuation">.</span>width<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//图片的宽</span>
+        <span class="token keyword">float</span> th <span class="token operator">=</span> rectTransform<span class="token punctuation">.</span>rect<span class="token punctuation">.</span>height<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//图片的高</span>
+        <span class="token keyword">float</span> twr <span class="token operator">=</span> tw <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> thr <span class="token operator">=</span> th <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
-        if (Radius &lt; 0)
-            Radius = 0;
-        float radius = tw / Radius;//半径这里需要动态计算确保不会被拉伸
-        if (radius &gt; twr)
-            radius = twr;
-        if (radius &lt; 0)
-            radius = 0;
-        if (TriangleNum &lt;= 0)
-            TriangleNum = 1;
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Radius <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            Radius <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> radius <span class="token operator">=</span> tw <span class="token operator">/</span> Radius<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//半径这里需要动态计算确保不会被拉伸</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>radius <span class="token operator">></span> twr<span class="token punctuation">)</span>
+            radius <span class="token operator">=</span> twr<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>radius <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            radius <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>TriangleNum <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            TriangleNum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-        UIVertex vert = UIVertex.simpleVert;
-        vert.color = color;
-        //左边矩形
-        AddVert(new Vector2(-twr, -thr + radius), tw, th, vh, vert);
-        AddVert(new Vector2(-twr, thr - radius), tw, th, vh, vert);
-        AddVert(new Vector2(-twr + radius, thr - radius), tw, th, vh, vert);
-        AddVert(new Vector2(-twr + radius, -thr + radius), tw, th, vh, vert);
-        vh.AddTriangle(0, 1, 2);
-        vh.AddTriangle(0, 2, 3);
-        //中间矩形
-        AddVert(new Vector2(-twr + radius, -thr), tw, th, vh, vert);
-        AddVert(new Vector2(-twr + radius, thr), tw, th, vh, vert);
-        AddVert(new Vector2(twr - radius, thr), tw, th, vh, vert);
-        AddVert(new Vector2(twr - radius, -thr), tw, th, vh, vert);
-        vh.AddTriangle(4, 5, 6);
-        vh.AddTriangle(4, 6, 7);
-        //右边矩形
-        AddVert(new Vector2(twr - radius, -thr + radius), tw, th, vh, vert);
-        AddVert(new Vector2(twr - radius, thr - radius), tw, th, vh, vert);
-        AddVert(new Vector2(twr, thr - radius), tw, th, vh, vert);
-        AddVert(new Vector2(twr, -thr + radius), tw, th, vh, vert);
-        vh.AddTriangle(8, 9, 10);
-        vh.AddTriangle(8, 10, 11);
+        UIVertex vert <span class="token operator">=</span> UIVertex<span class="token punctuation">.</span>simpleVert<span class="token punctuation">;</span>
+        vert<span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//左边矩形</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//中间矩形</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> thr<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> thr<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//右边矩形</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">AddVert</span><span class="token punctuation">(</span>new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        List&lt;Vector2&gt; CirclePoint = new List&lt;Vector2&gt;();//圆心列表
-        Vector2 pos0 = new Vector2(-twr + radius, -thr + radius);//左下角圆心
-        Vector2 pos1 = new Vector2(-twr, -thr + radius);//决定首次旋转方向的点
-        Vector2 pos2;
-        CirclePoint.Add(pos0);
-        CirclePoint.Add(pos1);
-        pos0 = new Vector2(-twr + radius, thr - radius);//左上角圆心
-        pos1 = new Vector2(-twr + radius, thr);
-        CirclePoint.Add(pos0);
-        CirclePoint.Add(pos1);
-        pos0 = new Vector2(twr - radius, thr - radius);//右上角圆心
-        pos1 = new Vector2(twr, thr - radius);
-        CirclePoint.Add(pos0);
-        CirclePoint.Add(pos1);
-        pos0 = new Vector2(twr - radius, -thr + radius);//右下角圆心
-        pos1 = new Vector2(twr - radius, -thr);
-        CirclePoint.Add(pos0);
-        CirclePoint.Add(pos1);
-        float degreeDelta = (float)(Mathf.PI / 2 / TriangleNum);//每一份等腰三角形的角度 默认6份
-        List&lt;float&gt; degreeDeltaList = new List&lt;float&gt;() { Mathf.PI, Mathf.PI / 2, 0, (float)3 / 2 * Mathf.PI };
+        List<span class="token operator">&lt;</span>Vector2<span class="token operator">></span> CirclePoint <span class="token operator">=</span> new List<span class="token operator">&lt;</span>Vector2<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//圆心列表</span>
+        Vector2 pos0 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//左下角圆心</span>
+        Vector2 pos1 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//决定首次旋转方向的点</span>
+        Vector2 pos2<span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pos0 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//左上角圆心</span>
+        pos1 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span><span class="token operator">-</span>twr <span class="token operator">+</span> radius<span class="token punctuation">,</span> thr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pos0 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//右上角圆心</span>
+        pos1 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr<span class="token punctuation">,</span> thr <span class="token operator">-</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pos0 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr <span class="token operator">+</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//右下角圆心</span>
+        pos1 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>twr <span class="token operator">-</span> radius<span class="token punctuation">,</span> <span class="token operator">-</span>thr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        CirclePoint<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pos1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> degreeDelta <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Mathf<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">/</span> TriangleNum<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//每一份等腰三角形的角度 默认6份</span>
+        List<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span> degreeDeltaList <span class="token operator">=</span> new List<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> Mathf<span class="token punctuation">.</span>PI<span class="token punctuation">,</span> Mathf<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token number">3</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">*</span> Mathf<span class="token punctuation">.</span>PI <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-        for (int j = 0; j &lt; CirclePoint.Count; j += 2)
-        {
-            float curDegree = degreeDeltaList[j / 2];//当前的角度
-            AddVert(CirclePoint[j], tw, th, vh, vert);//添加扇形区域所有三角形公共顶点
-            int thrdIndex = vh.currentVertCount;//当前三角形第二顶点索引
-            int TriangleVertIndex = vh.currentVertCount - 1;//一个扇形保持不变的顶点索引
-            List&lt;Vector2&gt; pos2List = new List&lt;Vector2&gt;();
-            for (int i = 0; i &lt; TriangleNum; i++)
-            {
-                curDegree += degreeDelta;
-                if (pos2List.Count == 0)
-                {
-                    AddVert(CirclePoint[j + 1], tw, th, vh, vert);
-                }
-                else
-                {
-                    vert.position = pos2List[i - 1];
-                    vert.uv0 = new Vector2(pos2List[i - 1].x + 0.5f, pos2List[i - 1].y + 0.5f);
-                }
-                pos2 = new Vector2(CirclePoint[j].x + radius * Mathf.Cos(curDegree), CirclePoint[j].y + radius * Mathf.Sin(curDegree));
-                AddVert(pos2, tw, th, vh, vert);
-                vh.AddTriangle(TriangleVertIndex, thrdIndex, thrdIndex + 1);
-                thrdIndex++;
-                pos2List.Add(vert.position);
-            }
-        }
-    }
-    protected Vector2[] GetTextureUVS(Vector2[] vhs, float tw, float th)
-    {
-        int count = vhs.Length;
-        Vector2[] uvs = new Vector2[count];
-        for (int i = 0; i &lt; uvs.Length; i++)
-        {
-            uvs[i] = new Vector2(vhs[i].x / tw + 0.5f, vhs[i].y / th + 0.5f);//矩形的uv坐标  因为uv坐标原点在左下角，vh坐标原点在中心 所以这里加0.5（uv取值范围0~1）
-        }
-        return uvs;
-    }
-    protected void AddVert(Vector2 pos0, float tw, float th, VertexHelper vh, UIVertex vert)
-    {
-        vert.position = pos0;
-        vert.uv0 = GetTextureUVS(new[] { new Vector2(pos0.x, pos0.y) }, tw, th)[0];
-        vh.AddVert(vert);
-    }
-}</code></pre>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> CirclePoint<span class="token punctuation">.</span>Count<span class="token punctuation">;</span> j <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">float</span> curDegree <span class="token operator">=</span> degreeDeltaList<span class="token punctuation">[</span>j <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//当前的角度</span>
+            <span class="token function">AddVert</span><span class="token punctuation">(</span>CirclePoint<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//添加扇形区域所有三角形公共顶点</span>
+            <span class="token keyword">int</span> thrdIndex <span class="token operator">=</span> vh<span class="token punctuation">.</span>currentVertCount<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//当前三角形第二顶点索引</span>
+            <span class="token keyword">int</span> TriangleVertIndex <span class="token operator">=</span> vh<span class="token punctuation">.</span>currentVertCount <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//一个扇形保持不变的顶点索引</span>
+            List<span class="token operator">&lt;</span>Vector2<span class="token operator">></span> pos2List <span class="token operator">=</span> new List<span class="token operator">&lt;</span>Vector2<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> TriangleNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                curDegree <span class="token operator">+</span><span class="token operator">=</span> degreeDelta<span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>pos2List<span class="token punctuation">.</span>Count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token function">AddVert</span><span class="token punctuation">(</span>CirclePoint<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span>
+                <span class="token punctuation">{</span>
+                    vert<span class="token punctuation">.</span>position <span class="token operator">=</span> pos2List<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    vert<span class="token punctuation">.</span>uv0 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>pos2List<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token number">0.5f</span><span class="token punctuation">,</span> pos2List<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>y <span class="token operator">+</span> <span class="token number">0.5f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                pos2 <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>CirclePoint<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">+</span> radius <span class="token operator">*</span> Mathf<span class="token punctuation">.</span><span class="token function">Cos</span><span class="token punctuation">(</span>curDegree<span class="token punctuation">)</span><span class="token punctuation">,</span> CirclePoint<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>y <span class="token operator">+</span> radius <span class="token operator">*</span> Mathf<span class="token punctuation">.</span><span class="token function">Sin</span><span class="token punctuation">(</span>curDegree<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">AddVert</span><span class="token punctuation">(</span>pos2<span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">,</span> vh<span class="token punctuation">,</span> vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                vh<span class="token punctuation">.</span><span class="token function">AddTriangle</span><span class="token punctuation">(</span>TriangleVertIndex<span class="token punctuation">,</span> thrdIndex<span class="token punctuation">,</span> thrdIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                thrdIndex<span class="token operator">++</span><span class="token punctuation">;</span>
+                pos2List<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>vert<span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    protected Vector2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">GetTextureUVS</span><span class="token punctuation">(</span>Vector2<span class="token punctuation">[</span><span class="token punctuation">]</span> vhs<span class="token punctuation">,</span> <span class="token keyword">float</span> tw<span class="token punctuation">,</span> <span class="token keyword">float</span> th<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> vhs<span class="token punctuation">.</span>Length<span class="token punctuation">;</span>
+        Vector2<span class="token punctuation">[</span><span class="token punctuation">]</span> uvs <span class="token operator">=</span> new Vector2<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> uvs<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            uvs<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>vhs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">/</span> tw <span class="token operator">+</span> <span class="token number">0.5f</span><span class="token punctuation">,</span> vhs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y <span class="token operator">/</span> th <span class="token operator">+</span> <span class="token number">0.5f</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//矩形的uv坐标  因为uv坐标原点在左下角，vh坐标原点在中心 所以这里加0.5（uv取值范围0~1）</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> uvs<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    protected <span class="token keyword">void</span> <span class="token function">AddVert</span><span class="token punctuation">(</span>Vector2 pos0<span class="token punctuation">,</span> <span class="token keyword">float</span> tw<span class="token punctuation">,</span> <span class="token keyword">float</span> th<span class="token punctuation">,</span> VertexHelper vh<span class="token punctuation">,</span> UIVertex vert<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        vert<span class="token punctuation">.</span>position <span class="token operator">=</span> pos0<span class="token punctuation">;</span>
+        vert<span class="token punctuation">.</span>uv0 <span class="token operator">=</span> <span class="token function">GetTextureUVS</span><span class="token punctuation">(</span>new<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span> new <span class="token function">Vector2</span><span class="token punctuation">(</span>pos0<span class="token punctuation">.</span>x<span class="token punctuation">,</span> pos0<span class="token punctuation">.</span>y<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> tw<span class="token punctuation">,</span> th<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        vh<span class="token punctuation">.</span><span class="token function">AddVert</span><span class="token punctuation">(</span>vert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
             </div>
             <hr/>
 

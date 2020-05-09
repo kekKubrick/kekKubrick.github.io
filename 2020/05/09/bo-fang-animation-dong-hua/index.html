@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    135
+                    139
                 </div>
                 
 
@@ -388,39 +388,39 @@
             <div id="articleContent">
                 <h2 id="播放Animation动画"><a href="#播放Animation动画" class="headerlink" title="播放Animation动画"></a>播放Animation动画</h2><p>Step1:设置Animation动画</p>
 <p>Step2:脚本</p>
-<pre class=" language-c#"><code class="language-c#">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-public class Script : MonoBehaviour
-{
-    public GameObject camera_4;
-    private Animation anim;
-    public string animName = "CameraAnimation";//CameraAnimation是需要播放的动画名
-    private bool bl = false;//设置动画只播放一次
+<pre class=" language-c"><code class="language-c">using System<span class="token punctuation">.</span>Collections<span class="token punctuation">;</span>
+using System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">;</span>
+using UnityEngine<span class="token punctuation">.</span>UI<span class="token punctuation">;</span>
+public class Script <span class="token punctuation">:</span> MonoBehaviour
+<span class="token punctuation">{</span>
+    public GameObject camera_4<span class="token punctuation">;</span>
+    private Animation anim<span class="token punctuation">;</span>
+    public string animName <span class="token operator">=</span> <span class="token string">"CameraAnimation"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//CameraAnimation是需要播放的动画名</span>
+    private bool bl <span class="token operator">=</span> false<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//设置动画只播放一次</span>
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //camera_4.GetComponent<Animation>().Play();
-        anim = camera_4.GetComponent<Animation>();//播放非自身动画，获取动画
-        bl = true;
-    }
+    <span class="token comment" spellcheck="true">// Start is called before the first frame update</span>
+    <span class="token keyword">void</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//camera_4.GetComponent&lt;Animation>().Play();</span>
+        anim <span class="token operator">=</span> camera_4<span class="token punctuation">.</span>GetComponent<span class="token operator">&lt;</span>Animation<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//播放非自身动画，获取动画</span>
+        bl <span class="token operator">=</span> true<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void MouseDown()
-    {
-        if (bl)//设置动画只播放一次
-        {
-            Debug.Log("OnMouseDown response");
+    public <span class="token keyword">void</span> <span class="token function">MouseDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>bl<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//设置动画只播放一次</span>
+        <span class="token punctuation">{</span>
+            Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"OnMouseDown response"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            anim[animName].speed = 1;//设置速度为正常播放，-1为倒放
-            anim.Play(animName);//播放动画
+            anim<span class="token punctuation">[</span>animName<span class="token punctuation">]</span><span class="token punctuation">.</span>speed <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//设置速度为正常播放，-1为倒放</span>
+            anim<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span>animName<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//播放动画</span>
 
-            bl = false;
-        }
-    }
+            bl <span class="token operator">=</span> false<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-}</code></pre>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
