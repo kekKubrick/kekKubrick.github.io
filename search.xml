@@ -395,31 +395,6 @@
     
     
     <entry>
-      <title>游戏开发常用</title>
-      <link href="/2019/04/05/you-xi-kai-fa-chang-yong/"/>
-      <url>/2019/04/05/you-xi-kai-fa-chang-yong/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="游戏开发常用"><a href="#游戏开发常用" class="headerlink" title="游戏开发常用"></a>游戏开发常用</h1><h2 id="社区平台"><a href="#社区平台" class="headerlink" title="社区平台"></a>社区平台</h2><ul><li><p><a href="www.taptap.com">taptap</a></p></li><li><p><a href="www.vgtime.com">游戏时光</a></p></li><li><p><a href="http://youxiputao.com/" target="_blank" rel="noopener">游戏葡萄</a></p></li><li><p><a href="https://www.gameres.com/" target="_blank" rel="noopener">gameres游资网</a></p></li><li><p><a href="https://www.gamespot.com/" target="_blank" rel="noopener">GameSpot</a></p></li><li><p><a href="https://www.appannie.com/cn/apps/ios/top/" target="_blank" rel="noopener">appannie ios排行</a></p></li><li><p><a href="https://gameinstitute.qq.com/minigame" target="_blank" rel="noopener">腾讯游戏学院</a></p></li><li><p><a href="https://game.academy.163.com/activity" target="_blank" rel="noopener">网易游戏学院</a></p></li></ul><h2 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h2><h3 id="cocos学习资源"><a href="#cocos学习资源" class="headerlink" title="cocos学习资源"></a>cocos学习资源</h3><ul><li><p><a href="https://www.bilibili.com/video/BV1g4411174p?from=search&seid=7662706387585459565" target="_blank" rel="noopener">cocos工具基础介绍</a></p></li><li><p><a href="https://www.bilibili.com/video/BV1c4411F75N?from=search&seid=7662706387585459565" target="_blank" rel="noopener">cocos官方教程（含项目教程）</a></p></li><li><p><a href="https://www.zhihu.com/answer/301810933" target="_blank" rel="noopener">微信小游戏开发资源目录</a></p></li></ul><h3 id="unity"><a href="#unity" class="headerlink" title="unity"></a>unity</h3><ul><li><p>《Unity Shader入门精要》</p></li><li><p><a href="https://zh.numberempire.com/matrixcalculator.php" target="_blank" rel="noopener">矩阵计算器</a></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 游戏 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 游戏 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间)</title>
       <link href="/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/"/>
       <url>/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/</url>
@@ -439,6 +414,31 @@
             <tag> 游戏 </tag>
             
             <tag> unity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>游戏开发常用</title>
+      <link href="/2019/04/05/you-xi-kai-fa-chang-yong/"/>
+      <url>/2019/04/05/you-xi-kai-fa-chang-yong/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="游戏开发常用"><a href="#游戏开发常用" class="headerlink" title="游戏开发常用"></a>游戏开发常用</h1><h2 id="社区平台"><a href="#社区平台" class="headerlink" title="社区平台"></a>社区平台</h2><ul><li><p><a href="www.taptap.com">taptap</a></p></li><li><p><a href="www.vgtime.com">游戏时光</a></p></li><li><p><a href="http://youxiputao.com/" target="_blank" rel="noopener">游戏葡萄</a></p></li><li><p><a href="https://www.gameres.com/" target="_blank" rel="noopener">gameres游资网</a></p></li><li><p><a href="https://www.gamespot.com/" target="_blank" rel="noopener">GameSpot</a></p></li><li><p><a href="https://www.appannie.com/cn/apps/ios/top/" target="_blank" rel="noopener">appannie ios排行</a></p></li><li><p><a href="https://gameinstitute.qq.com/minigame" target="_blank" rel="noopener">腾讯游戏学院</a></p></li><li><p><a href="https://game.academy.163.com/activity" target="_blank" rel="noopener">网易游戏学院</a></p></li></ul><h2 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h2><h3 id="cocos学习资源"><a href="#cocos学习资源" class="headerlink" title="cocos学习资源"></a>cocos学习资源</h3><ul><li><p><a href="https://www.bilibili.com/video/BV1g4411174p?from=search&seid=7662706387585459565" target="_blank" rel="noopener">cocos工具基础介绍</a></p></li><li><p><a href="https://www.bilibili.com/video/BV1c4411F75N?from=search&seid=7662706387585459565" target="_blank" rel="noopener">cocos官方教程（含项目教程）</a></p></li><li><p><a href="https://www.zhihu.com/answer/301810933" target="_blank" rel="noopener">微信小游戏开发资源目录</a></p></li></ul><h3 id="unity"><a href="#unity" class="headerlink" title="unity"></a>unity</h3><ul><li><p>《Unity Shader入门精要》</p></li><li><p><a href="https://zh.numberempire.com/matrixcalculator.php" target="_blank" rel="noopener">矩阵计算器</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
             
         </tags>
       
