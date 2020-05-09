@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kekekubrick.com/"/>
-  <updated>2020-05-09T13:12:48.072Z</updated>
+  <updated>2020-05-09T14:02:00.514Z</updated>
   <id>https://kekekubrick.com/</id>
   
   <author>
@@ -15,6 +15,151 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UIImage设置圆角矩形</title>
+    <link href="https://kekekubrick.com/2020/05/09/uiimage-she-zhi-yuan-jiao-ju-xing/"/>
+    <id>https://kekekubrick.com/2020/05/09/uiimage-she-zhi-yuan-jiao-ju-xing/</id>
+    <published>2020-05-09T13:11:00.000Z</published>
+    <updated>2020-05-09T14:02:00.514Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mash绘制简单图形</title>
+    <link href="https://kekekubrick.com/2020/05/09/mash-hui-zhi-jian-dan-tu-xing/"/>
+    <id>https://kekekubrick.com/2020/05/09/mash-hui-zhi-jian-dan-tu-xing/</id>
+    <published>2020-05-09T13:11:00.000Z</published>
+    <updated>2020-05-09T13:54:55.403Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>切换摄像头</title>
+    <link href="https://kekekubrick.com/2020/05/09/qie-huan-she-xiang-tou/"/>
+    <id>https://kekekubrick.com/2020/05/09/qie-huan-she-xiang-tou/</id>
+    <published>2020-05-09T13:11:00.000Z</published>
+    <updated>2020-05-09T13:40:58.709Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>播放Animation动画</title>
+    <link href="https://kekekubrick.com/2020/05/09/bo-fang-animation-dong-hua/"/>
+    <id>https://kekekubrick.com/2020/05/09/bo-fang-animation-dong-hua/</id>
+    <published>2020-05-09T13:11:00.000Z</published>
+    <updated>2020-05-09T13:39:49.349Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>退出游戏</title>
+    <link href="https://kekekubrick.com/2020/05/09/tui-chu-you-xi/"/>
+    <id>https://kekekubrick.com/2020/05/09/tui-chu-you-xi/</id>
+    <published>2020-05-09T13:11:00.000Z</published>
+    <updated>2020-05-09T13:52:30.880Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
+    
+  </entry>
   
   <entry>
     <title>unity鼠标点击事件</title>
@@ -434,89 +579,6 @@
     
     
       <category term="小程序" scheme="https://kekekubrick.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模型空间到屏幕空间(模型、世界、观察/摄像机、裁剪、屏幕空间)</title>
-    <link href="https://kekekubrick.com/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/"/>
-    <id>https://kekekubrick.com/2019/04/05/mo-xing-kong-jian-dao-ping-mu-kong-jian/</id>
-    <published>2019-04-05T01:25:00.000Z</published>
-    <updated>2020-04-15T12:35:18.383Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-      <category term="unity" scheme="https://kekekubrick.com/tags/unity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>游戏开发常用</title>
-    <link href="https://kekekubrick.com/2019/04/05/you-xi-kai-fa-chang-yong/"/>
-    <id>https://kekekubrick.com/2019/04/05/you-xi-kai-fa-chang-yong/</id>
-    <published>2019-04-05T01:25:00.000Z</published>
-    <updated>2020-04-15T12:36:16.048Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="游戏" scheme="https://kekekubrick.com/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-      <category term="游戏" scheme="https://kekekubrick.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>B树、B+树、B*树</title>
-    <link href="https://kekekubrick.com/2018/04/09/b-shu-b-shu-b-cheng-shu/"/>
-    <id>https://kekekubrick.com/2018/04/09/b-shu-b-shu-b-cheng-shu/</id>
-    <published>2018-04-09T01:25:00.000Z</published>
-    <updated>2020-04-10T16:10:36.888Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="https://kekekubrick.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://kekekubrick.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
